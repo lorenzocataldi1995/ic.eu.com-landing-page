@@ -4,7 +4,10 @@
   <head>
     <!-- Previous head content remains exactly the same -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.75, user-scalable=no"
+    />
     <title>Io Conto</title>
 
     <!-- Open Graph Meta Tags -->
@@ -48,14 +51,59 @@
     </script>
 
     <script type="text/javascript">
-      var _iub = _iub || [];
-      _iub.csConfiguration = {
-        siteId: 3938751,
-        cookiePolicyId: 95683343,
-        lang: "it",
-        storage: { useSiteId: true },
-      };
+      (function (w, d) {
+        var loader = function () {
+          var s = d.createElement("script"),
+            tag = d.getElementsByTagName("script")[0];
+          s.src = "https://cdn.iubenda.com/iubenda.js";
+          tag.parentNode.insertBefore(s, tag);
+        };
+        if (w.addEventListener) {
+          w.addEventListener("load", loader, false);
+        } else if (w.attachEvent) {
+          w.attachEvent("onload", loader);
+        } else {
+          w.onload = loader;
+        }
+      })(window, document);
     </script>
+
+    <script type="text/javascript">
+      (function (w, d) {
+        var loader = function () {
+          var s = d.createElement("script"),
+            tag = d.getElementsByTagName("script")[0];
+          s.src = "https://cdn.iubenda.com/iubenda.js";
+          tag.parentNode.insertBefore(s, tag);
+        };
+        if (w.addEventListener) {
+          w.addEventListener("load", loader, false);
+        } else if (w.attachEvent) {
+          w.attachEvent("onload", loader);
+        } else {
+          w.onload = loader;
+        }
+      })(window, document);
+    </script>
+
+    <script type="text/javascript">
+      (function (w, d) {
+        var loader = function () {
+          var s = d.createElement("script"),
+            tag = d.getElementsByTagName("script")[0];
+          s.src = "https://cdn.iubenda.com/iubenda.js";
+          tag.parentNode.insertBefore(s, tag);
+        };
+        if (w.addEventListener) {
+          w.addEventListener("load", loader, false);
+        } else if (w.attachEvent) {
+          w.attachEvent("onload", loader);
+        } else {
+          w.onload = loader;
+        }
+      })(window, document);
+    </script>
+
     <script
       type="text/javascript"
       src="https://cs.iubenda.com/autoblocking/3938751.js"
@@ -70,6 +118,12 @@
       charset="UTF-8"
       async
     ></script>
+
+    <script>
+      window.addEventListener("load", function () {
+        document.getElementById("year").textContent = new Date().getFullYear();
+      });
+    </script>
 
     <!-- Manrope Font -->
     <link href="https://fonts.cdnfonts.com/css/manrope" rel="stylesheet" />
@@ -173,6 +227,16 @@
           height: 40px;
         }
       }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        padding: 20px;
+        z-index: 1000;
+      }
     </style>
   </head>
   <body>
@@ -201,5 +265,23 @@
         </div>
       </div>
     </div>
+    <br />
+
+    <footer>
+      <pre style="white-space: nowrap">
+        <a href="https://www.iubenda.com/privacy-policy/53778054"
+           class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+           title="Privacy Policy">Privacy Policy</a>
+        
+        <a href="https://www.iubenda.com/privacy-policy/53778054/cookie-policy"
+           class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+           title="Cookie Policy">Cookie Policy</a>
+        
+        <a href="https://www.iubenda.com/termini-e-condizioni/53778054"
+           class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+           title="Termini e Condizioni">Termini e Condizioni</a>
+      </pre>
+      &copy; <span id="year"></span> Io Conto. Tutti i diritti riservati.
+    </footer>
   </body>
 </html>
