@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- Previous head section remains the same until the store button images -->
+<html lang="it">
   <head>
-    <!-- Previous head content remains exactly the same -->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -43,54 +41,10 @@
       content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIHJ4PSI4MCIgZmlsbD0iIzQ0NDdFNiIvPjxwYXRoIGQ9Ik0xNTAgMjAwQzE1MCAxNzIuMzg2IDE3Mi4zODYgMTUwIDIwMCAxNTBDMjI3LjYxNCAxNTAgMjUwIDE3Mi4zODYgMjUwIDIwMEMyNTAgMjI3LjYxNCAyMjcuNjE0IDI1MCAyMDAgMjUwQzE3Mi4zODYgMjUwIDE1MCAyMjcuNjE0IDE1MCAyMDAiIGZpbGw9IndoaXRlIi8+PC9zdmc+"
     />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-NJZSQDRD19"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    <!-- Manrope Font -->
+    <link href="https://fonts.cdnfonts.com/css/manrope" rel="stylesheet" />
 
-      gtag("config", "G-NJZSQDRD19");
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16939118203"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "AW-16939118203");
-    </script>
-
-    <script type="text/javascript">
-      (function (w, d) {
-        var loader = function () {
-          var s = d.createElement("script"),
-            tag = d.getElementsByTagName("script")[0];
-          s.src = "https://cdn.iubenda.com/iubenda.js";
-          tag.parentNode.insertBefore(s, tag);
-        };
-        if (w.addEventListener) {
-          w.addEventListener("load", loader, false);
-        } else if (w.attachEvent) {
-          w.attachEvent("onload", loader);
-        } else {
-          w.onload = loader;
-        }
-      })(window, document);
-    </script>
-
+    <!-- Iubenda Consent Solution - Autoblocking (prima di qualsiasi tracking) -->
     <script
       type="text/javascript"
       src="https://cs.iubenda.com/autoblocking/3938751.js"
@@ -106,14 +60,149 @@
       async
     ></script>
 
+    <!-- Google tag (gtag.js) - un solo loader, GA4 + Google Ads -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16939118203"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      // Config GA4 + Ads
+      gtag("config", "G-NJZSQDRD19");
+      gtag("config", "AW-16939118203");
+
+      // Helper per conversione Ads su click
+      function gtagReportAdsConversion(destinationUrl) {
+        try {
+          gtag("event", "conversion", {
+            send_to: "AW-16939118203/wv3VCMmX1rkaEPvcmY0_",
+            // value: 0, currency: "EUR", // opzionale
+            event_callback: function () {
+              if (destinationUrl) window.location.href = destinationUrl;
+            },
+          });
+        } catch (e) {
+          if (destinationUrl) window.location.href = destinationUrl;
+        }
+      }
+
+      // Tracking eventi “sensati”
+      document.addEventListener("DOMContentLoaded", function () {
+        // Impression dei badge store (entrano in viewport)
+        const badgeImgs = document.querySelectorAll(".store-button");
+        if ("IntersectionObserver" in window && badgeImgs.length) {
+          const seen = new WeakSet();
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !seen.has(entry.target)) {
+                  seen.add(entry.target);
+                  const parentA = entry.target.closest("a[href]");
+                  const href = parentA ? parentA.href : "";
+                  const store = href.includes("apps.apple.com")
+                    ? "apple_app_store"
+                    : href.includes("play.google.com")
+                    ? "google_play_store"
+                    : "unknown_store";
+                  gtag("event", "store_badge_impression", {
+                    store: store,
+                    link_url: href,
+                    location_id: "hero_store_buttons",
+                  });
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+          badgeImgs.forEach((img) => io.observe(img));
+        }
+
+        // Click sui badge store → GA4 + Conversione Ads
+        const storeLinks = document.querySelectorAll(".store-buttons a[href]");
+        storeLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const href = this.href;
+            const isApple = href.includes("apps.apple.com");
+            const isGoogle = href.includes("play.google.com");
+            const store = isApple
+              ? "apple_app_store"
+              : isGoogle
+              ? "google_play_store"
+              : "unknown_store";
+
+            // Evento GA4 dedicato
+            gtag("event", "store_badge_click", {
+              store: store,
+              link_url: href,
+              location_id: "hero_store_buttons",
+              method: "badge",
+            });
+
+            // Outbound generic (GA4)
+            try {
+              const host = new URL(href).hostname;
+              gtag("event", "outbound_click", {
+                destination: host,
+                link_url: href,
+              });
+            } catch (e) {}
+
+            // Conversione Ads su click (senso principale del funnel)
+            // Se il link NON apre in nuova scheda, preveniamo e rimandiamo la navigazione a callback
+            const opensNewTab = this.target === "_blank";
+            if (!opensNewTab) {
+              e.preventDefault();
+              gtagReportAdsConversion(href);
+            } else {
+              // Nuova scheda: non blocchiamo navigazione, ma inviamo comunque la conversione
+              gtagReportAdsConversion();
+            }
+          });
+        });
+
+        // Altri outbound link → solo GA4 (niente conversione Ads)
+        document.body.addEventListener("click", function (e) {
+          const a = e.target.closest("a[href]");
+          if (!a) return;
+          if (a.closest(".store-buttons")) return; // già tracciati sopra
+          try {
+            const dest = new URL(a.href);
+            if (dest.hostname !== window.location.hostname) {
+              gtag("event", "outbound_click", {
+                destination: dest.hostname,
+                link_url: a.href,
+              });
+            }
+          } catch (err) {}
+        });
+      });
+    </script>
+
+    <!-- Iubenda UI loader -->
+    <script type="text/javascript">
+      (function (w, d) {
+        var loader = function () {
+          var s = d.createElement("script"),
+            tag = d.getElementsByTagName("script")[0];
+          s.src = "https://cdn.iubenda.com/iubenda.js";
+          tag.parentNode.insertBefore(s, tag);
+        };
+        if (w.addEventListener) w.addEventListener("load", loader, false);
+        else if (w.attachEvent) w.attachEvent("onload", loader);
+        else w.onload = loader;
+      })(window, document);
+    </script>
+
     <script>
       window.addEventListener("load", function () {
         document.getElementById("year").textContent = new Date().getFullYear();
       });
     </script>
-
-    <!-- Manrope Font -->
-    <link href="https://fonts.cdnfonts.com/css/manrope" rel="stylesheet" />
 
     <style>
       body {
@@ -136,7 +225,6 @@
         max-width: 90%;
         width: auto;
         box-sizing: border-box;
-        /* Il background e il bordo verranno gestiti dallo pseudo-elemento */
       }
 
       .bounding-box::before {
@@ -206,16 +294,13 @@
         .bounding-box {
           padding: 30px;
         }
-
         .app-icon {
           width: 128px;
           height: 128px;
         }
-
         .app-name {
           font-size: 2rem;
         }
-
         .store-button {
           height: 40px;
         }
@@ -232,6 +317,7 @@
       }
     </style>
   </head>
+
   <body>
     <div class="bounding-box">
       <div class="container">
@@ -242,6 +328,7 @@
           <a
             href="https://apps.apple.com/it/app/io-conto/id6742789673"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img
               src="app-store.svg"
@@ -252,6 +339,7 @@
           <a
             href="https://play.google.com/store/apps/details?id=com.ioconto"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img
               src="google-play.svg"
@@ -266,18 +354,18 @@
 
     <footer>
       <pre style="white-space: nowrap">
-        <a href="https://www.iubenda.com/privacy-policy/53778054"
-           class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-           title="Privacy Policy">Privacy Policy</a>
-        
-        <a href="https://www.iubenda.com/privacy-policy/53778054/cookie-policy"
-           class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-           title="Cookie Policy">Cookie Policy</a>
-        
-        <!-- <a href="https://www.iubenda.com/termini-e-condizioni/53778054"
-           class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-           title="Termini e Condizioni">Termini e Condizioni</a> -->
-      </pre>
+<a href="https://www.iubenda.com/privacy-policy/53778054"
+   class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+   title="Privacy Policy">Privacy Policy</a>
+
+<a href="https://www.iubenda.com/privacy-policy/53778054/cookie-policy"
+   class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+   title="Cookie Policy">Cookie Policy</a>
+
+<!-- <a href="https://www.iubenda.com/termini-e-condizioni/53778054"
+   class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+   title="Termini e Condizioni">Termini e Condizioni</a> -->
+</pre>
       Io Conto. &copy; <span id="year"></span> - Tutti i diritti riservati.
     </footer>
   </body>
