@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
@@ -44,22 +44,6 @@
     <!-- Manrope Font -->
     <link href="https://fonts.cdnfonts.com/css/manrope" rel="stylesheet" />
 
-    <!-- Iubenda Consent Solution - Autoblocking (prima di qualsiasi tracking) -->
-    <script
-      type="text/javascript"
-      src="https://cs.iubenda.com/autoblocking/3938751.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.iubenda.com/cs/gpp/stub.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.iubenda.com/cs/iubenda_cs.js"
-      charset="UTF-8"
-      async
-    ></script>
-
     <!-- Meta Pixel Code -->
     <script>
       !(function (f, b, e, v, n, t, s) {
@@ -83,7 +67,7 @@
         window,
         document,
         "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
+        "https://connect.facebook.net/en_US/fbevents.js",
       );
       fbq("init", "25486938970914277");
       fbq("track", "PageView");
@@ -153,8 +137,8 @@
                   const store = href.includes("apps.apple.com")
                     ? "apple_app_store"
                     : href.includes("play.google.com")
-                    ? "google_play_store"
-                    : "unknown_store";
+                      ? "google_play_store"
+                      : "unknown_store";
                   gtag("event", "store_badge_impression", {
                     store: store,
                     link_url: href,
@@ -163,7 +147,7 @@
                 }
               });
             },
-            { threshold: 0.5 }
+            { threshold: 0.5 },
           );
           badgeImgs.forEach((img) => io.observe(img));
         }
@@ -178,8 +162,8 @@
             const store = isApple
               ? "apple_app_store"
               : isGoogle
-              ? "google_play_store"
-              : "unknown_store";
+                ? "google_play_store"
+                : "unknown_store";
 
             // Evento GA4 dedicato
             gtag("event", "store_badge_click", {
@@ -227,21 +211,6 @@
           } catch (err) {}
         });
       });
-    </script>
-
-    <!-- Iubenda UI loader -->
-    <script type="text/javascript">
-      (function (w, d) {
-        var loader = function () {
-          var s = d.createElement("script"),
-            tag = d.getElementsByTagName("script")[0];
-          s.src = "https://cdn.iubenda.com/iubenda.js";
-          tag.parentNode.insertBefore(s, tag);
-        };
-        if (w.addEventListener) w.addEventListener("load", loader, false);
-        else if (w.attachEvent) w.attachEvent("onload", loader);
-        else w.onload = loader;
-      })(window, document);
     </script>
 
     <script>
@@ -400,17 +369,9 @@
 
     <footer>
       <pre style="white-space: nowrap">
-<a href="https://www.iubenda.com/privacy-policy/53778054"
-   class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-   title="Privacy Policy">Privacy Policy</a>
+<a href="https://ic.eu.com/app/privacy-policy"
+   title="Privacy & Cookie Policy">Privacy & Cookie Policy</a>
 
-<a href="https://www.iubenda.com/privacy-policy/53778054/cookie-policy"
-   class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-   title="Cookie Policy">Cookie Policy</a>
-
-<!-- <a href="https://www.iubenda.com/termini-e-condizioni/53778054"
-   class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-   title="Termini e Condizioni">Termini e Condizioni</a> -->
 </pre>
       Io Conto. &copy; <span id="year"></span> - Tutti i diritti riservati.
     </footer>
