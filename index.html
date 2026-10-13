@@ -44,70 +44,66 @@
     <!-- Manrope Font -->
     <link href="https://fonts.cdnfonts.com/css/manrope" rel="stylesheet" />
 
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js",
-      );
-      fbq("init", "25486938970914277");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=25486938970914277&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        src="https://www.facebook.com/tr?id=1887450252203459&ev=PageView
-&noscript=1"
-      />
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-
-    <!-- Google tag (gtag.js) - un solo loader, GA4 + Google Ads -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16939118203"
-    ></script>
+    <!-- Strumenti di misura e pubblicità (Meta Pixel, Google Analytics 4, Google Ads): caricati SOLO dopo il consenso
+         dato nel banner in fondo alla pagina (art. 122 Codice privacy, linee guida del Garante sui cookie, 10 giugno 2021).
+         Prima del consenso gtag() non registra nulla e nessuno script di terzi viene scaricato. -->
     <script>
       window.dataLayer = window.dataLayer || [];
+      window.icConsent = null; // "granted" | "denied" | null (non ancora scelto)
       function gtag() {
-        dataLayer.push(arguments);
+        if (window.icConsent === "granted") dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-
-      // Config GA4 + Ads
-      gtag("config", "G-NJZSQDRD19");
-      gtag("config", "AW-16939118203");
+      function icLoadMeta() {
+        !(function (f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function () {
+            n.callMethod
+              ? n.callMethod.apply(n, arguments)
+              : n.queue.push(arguments);
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = "2.0";
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        })(
+          window,
+          document,
+          "script",
+          "https://connect.facebook.net/en_US/fbevents.js",
+        );
+        fbq("init", "25486938970914277");
+        fbq("track", "PageView");
+      }
+      function icLoadGoogle() {
+        var t = document.createElement("script");
+        t.async = true;
+        t.src = "https://www.googletagmanager.com/gtag/js?id=AW-16939118203";
+        document.head.appendChild(t);
+        gtag("js", new Date());
+        gtag("config", "G-NJZSQDRD19");
+        gtag("config", "AW-16939118203");
+      }
+      function icStartTrackers() {
+        if (window.icTrackersStarted) return;
+        window.icTrackersStarted = true;
+        icLoadGoogle();
+        icLoadMeta();
+      }
 
       // Helper per conversione Ads su click
       function gtagReportAdsConversion(destinationUrl) {
+        // Senza consenso (o con gtag bloccato) la navigazione non deve mai restare in attesa.
+        if (window.icConsent !== "granted") {
+          if (destinationUrl) window.location.href = destinationUrl;
+          return;
+        }
+        if (destinationUrl) setTimeout(function () { window.location.href = destinationUrl; }, 1500);
         try {
           gtag("event", "conversion", {
             send_to: "AW-16939118203/wv3VCMmX1rkaEPvcmY0_",
@@ -370,10 +366,82 @@
     <footer>
       <pre style="white-space: nowrap">
 <a href="https://ic.eu.com/app/privacy-policy" style="color:white"
-   title="Privacy & Cookie Policy">Privacy & Cookie Policy</a>
+   title="Privacy & Cookie Policy">Privacy & Cookie Policy</a> · <a href="#" id="ic-cookie-prefs" style="color:white">Preferenze cookie</a>
 
 </pre>
       Io Conto. &copy; <span id="year"></span> - Tutti i diritti riservati.
     </footer>
+
+    <!-- Banner dei cookie: «Rifiuta» e «Accetta» con lo stesso peso; chiudere con la X equivale a rifiutare.
+         La scelta resta nel browser per 6 mesi (localStorage), poi viene chiesta di nuovo. -->
+    <div id="ic-consent" role="dialog" aria-live="polite" aria-labelledby="ic-consent-title" hidden>
+      <button type="button" class="ic-x" data-choice="denied" aria-label="Chiudi e rifiuta">&times;</button>
+      <p id="ic-consent-title"><b>Cookie e strumenti di misura</b></p>
+      <p>
+        Usiamo solo ciò che serve al sito. Con il tuo consenso usiamo anche Google Analytics, Google Ads e Meta Pixel
+        per contare le visite e misurare le nostre campagne. Puoi cambiare idea quando vuoi da «Preferenze cookie».
+        <a href="https://ic.eu.com/app/privacy-policy#sito">Informativa</a>
+      </p>
+      <div class="ic-actions">
+        <button type="button" data-choice="denied">Rifiuta</button>
+        <button type="button" data-choice="granted">Accetta</button>
+      </div>
+    </div>
+    <style>
+      #ic-consent { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 2000; width: min(560px, calc(100% - 32px));
+        background: #fff; color: #15171b; border-radius: 16px; padding: 18px 20px 16px; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+        font-family: "Manrope", -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; line-height: 1.45; text-align: left; }
+      #ic-consent[hidden] { display: none; }
+      #ic-consent p { margin: 0 28px 8px 0; }
+      #ic-consent a { color: #3741e1; }
+      #ic-consent .ic-actions { display: flex; gap: 10px; margin-top: 10px; }
+      #ic-consent .ic-actions button { flex: 1; min-height: 44px; border-radius: 10px; border: 2px solid #3741e1; font: inherit;
+        font-weight: 700; cursor: pointer; background: #3741e1; color: #fff; }
+      #ic-consent .ic-x { position: absolute; top: 8px; right: 10px; width: 36px; height: 36px; border: 0; background: none;
+        font-size: 24px; line-height: 1; color: #6d7077; cursor: pointer; }
+    </style>
+    <script>
+      (function () {
+        var KEY = "ic-consent", SIX_MONTHS = 182 * 24 * 3600 * 1000;
+        var box = document.getElementById("ic-consent");
+        function read() {
+          try {
+            var c = JSON.parse(localStorage.getItem(KEY) || "null");
+            return c && Date.now() - c.t < SIX_MONTHS ? c.v : null;
+          } catch (e) { return null; }
+        }
+        function clearTrackerCookies() {
+          var host = location.hostname, domains = ["", host, "." + host, "." + host.split(".").slice(-2).join(".")];
+          document.cookie.split(";").forEach(function (c) {
+            var name = c.split("=")[0].trim();
+            if (!/^(_ga|_gid|_gcl_|_fbp|_fbc)/.test(name)) return;
+            domains.forEach(function (d) {
+              document.cookie = name + "=; Max-Age=0; path=/" + (d ? "; domain=" + d : "");
+            });
+          });
+        }
+        function apply(v) {
+          window.icConsent = v;
+          if (v === "granted") icStartTrackers();
+        }
+        function choose(v) {
+          try { localStorage.setItem(KEY, JSON.stringify({ v: v, t: Date.now() })); } catch (e) {}
+          box.hidden = true;
+          if (v === "denied") clearTrackerCookies();
+          if (v === "denied" && window.icTrackersStarted) { location.reload(); return; } // revoca: ricarica senza strumenti
+          apply(v);
+        }
+        box.addEventListener("click", function (e) {
+          var b = e.target.closest("[data-choice]");
+          if (b) choose(b.getAttribute("data-choice"));
+        });
+        document.getElementById("ic-cookie-prefs").addEventListener("click", function (e) {
+          e.preventDefault();
+          box.hidden = false;
+        });
+        var v = read();
+        if (v) apply(v); else box.hidden = false;
+      })();
+    </script>
   </body>
 </html>
