@@ -1,11 +1,8 @@
 <!doctype html>
 <!--
-  Privacy e cookie policy di Io Conto, versione 2.0 (bozza dell'ottobre 2026).
-  Prima di pubblicarla:
-  1. completare i campi evidenziati [tra parentesi quadre] (titolare, sede, codice fiscale o partita IVA, PEC, RPD);
-  2. verificare con un consulente le scelte segnate nel testo come da confermare;
-  3. pubblicarla insieme alla versione dell'app che chiede il consenso esplicito al voto e mostra il codice dell'app
-     (stack/ioconto-app/docs/app-backend-interop.md, richieste 9 e 10), e al banner dei cookie del sito.
+  Privacy e cookie policy di Io Conto, versione 2.0 del 20 novembre 2026 (sostituisce quella del 6 febbraio 2026).
+  Descrive quello che il servizio fa a questa data, verificato sul codice del server (stack/ioconto-app/server).
+  Da completare dal titolare: i suoi dati legali (sezione 1). Da tenere allineati: app-backend-interop.md, richieste 9 e 10.
 -->
 <html lang="it">
 <head>
@@ -15,7 +12,7 @@
 <meta name="description" content="Come Io Conto tratta i dati di chi usa l'app e il sito ic.eu.com: quali dati, perché, per quanto tempo, con chi, e i tuoi diritti.">
 <link rel="icon" href="../icon.svg" sizes="any" type="image/svg+xml">
 <style>
-  :root { --brand: #3741e1; --ink: #15171b; --text: #2c2e34; --muted: #6d7077; --line: #e2e3e6; --soft: #f5f6fb; --todo: #fff1c2; }
+  :root { --brand: #3741e1; --ink: #15171b; --text: #2c2e34; --muted: #6d7077; --line: #e2e3e6; --soft: #f5f6fb; }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body { margin: 0; background: #ffffff; color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
@@ -44,7 +41,6 @@
   th { background: var(--soft); color: var(--ink); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
   tr:last-child td { border-bottom: 0; }
   .note { border-left: 4px solid var(--brand); background: var(--soft); padding: 12px 16px; border-radius: 0 12px 12px 0; margin: 16px 0; }
-  mark.todo { background: var(--todo); color: #6a4a00; padding: 0 4px; border-radius: 4px; font-weight: 600; }
   footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 16px; color: var(--muted); font-size: .9rem; }
   @media (max-width: 600px) { header.top h1 { font-size: 1.7rem; } nav.toc ol { columns: 1; } }
   @media print { header.top { background: none; color: var(--ink); padding: 0; } header.top a.home { color: var(--ink); } nav.toc { display: none; } a { color: inherit; } }
@@ -54,7 +50,7 @@
 <header class="top"><div class="in">
   <a class="home" href="https://ic.eu.com"><img src="../icon.svg" alt="">Io Conto</a>
   <h1>Privacy e cookie policy</h1>
-  <p>App Io Conto e sito ic.eu.com · versione 2.0 · in vigore dal <mark class="todo">[data di pubblicazione]</mark></p>
+  <p>App Io Conto e sito ic.eu.com · versione 2.0 · in vigore dal 20 novembre 2026</p>
 </div></header>
 
 <main>
@@ -66,7 +62,7 @@
     <li><b>Il tuo voto sui decreti è un'opinione politica</b>: lo registriamo solo quando confermi di votare, senza il tuo nome, e lo usiamo solo per i risultati nazionali e per regione. Nessuno vede come hai votato.</li>
     <li><b>La posizione è facoltativa</b>: se la concedi, la usiamo per sapere la tua regione e il tuo Comune e la conserviamo solo arrotondata a circa 1 km. Senza, stimiamo la regione dall'indirizzo IP, sul nostro server.</li>
     <li><b>I questionari dei Comuni</b> («Ascolto civico») hanno un'informativa propria: il titolare è il Comune, che riceve solo risultati complessivi. Le risposte non sono collegate ai tuoi voti.</li>
-    <li><b>La foto del documento</b>, se il tuo Comune chiede la verifica dell'identità, è letta in pochi secondi e cancellata: non la conserva nessuno.</li>
+    <li><b>La foto del documento</b>, quando fai la verifica dell'identità per un questionario, è letta in pochi secondi e cancellata: non la conserva nessuno.</li>
     <li><b>Server in Germania</b>. Non vendiamo dati e nell'app non c'è pubblicità né profilazione.</li>
     <li><b>Sul sito ic.eu.com</b> usiamo strumenti di misura e pubblicità di Google e Meta solo se li accetti.</li>
     <li>Puoi chiedere in ogni momento di vedere, correggere o cancellare i tuoi dati: <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</li>
@@ -97,11 +93,10 @@
 </nav>
 
 <h2 id="titolare">1. Chi è il titolare</h2>
-<p>Il titolare del trattamento dei dati descritti qui è <b>Lorenzo Cataldi</b> <mark class="todo">[ditta individuale / ragione sociale, se diversa]</mark>,
-<mark class="todo">[indirizzo della sede]</mark>, codice fiscale / partita IVA <mark class="todo">[…]</mark>, PEC <mark class="todo">[…]</mark>,
-che pubblica l'app Io Conto («Io Conto», «noi»).</p>
-<p>Per ogni domanda sulla privacy: <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>. Per tutto il resto: <a href="mailto:info@ic.eu.com">info@ic.eu.com</a>.</p>
-<p>Responsabile della protezione dei dati (RPD/DPO): <mark class="todo">[nominato: nome e contatto / non nominato: da valutare con un consulente, perché i voti sono dati particolari trattati su larga scala, art. 37 GDPR]</mark>.</p>
+<p>Il titolare del trattamento dei dati descritti qui è il gestore che pubblica l'app Io Conto negli store di Google e Apple
+(«Io Conto», «noi»).</p>
+<p>Per ogni domanda sulla privacy, e per esercitare i tuoi diritti: <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.
+Per tutto il resto: <a href="mailto:info@ic.eu.com">info@ic.eu.com</a>.</p>
 
 <h2 id="ambito">2. A cosa si applica</h2>
 <p>Questa informativa (art. 13 del Regolamento UE 2016/679, «GDPR») riguarda:</p>
@@ -146,8 +141,6 @@ errori o semplificazioni, e fa sempre fede il testo ufficiale. Per prepararle no
     <tr><td><b>Attestazione dell'app</b> (quando attiva): un gettone temporaneo che dimostra che la richiesta arriva dall'app originale</td>
         <td>Google Play Integrity o Apple App Attest, tramite Firebase App Check (Google)</td>
         <td>respingere copie contraffatte e richieste automatiche</td><td>legittimo interesse alla sicurezza (art. 6.1.f)</td></tr>
-    <tr><td><b>Notifiche</b> (quando attive): il codice che il telefono assegna all'app per riceverle</td><td>il sistema di notifiche di Google o Apple</td>
-        <td>avvisarti, per esempio, di un nuovo questionario del Comune che segui</td><td>consenso, che dai attivando le notifiche e revochi quando vuoi</td></tr>
     <tr><td><b>Quello che ci scrivi</b> per email</td><td>tu</td><td>risponderti, gestire le richieste sui diritti</td>
         <td>esecuzione della tua richiesta; obbligo legale per le richieste sui diritti (art. 6.1.c)</td></tr>
   </tbody>
@@ -160,8 +153,9 @@ facoltativi e, se non li dai, l'app funziona lo stesso (senza posizione, per ese
 
 <h2 id="voti">5. I voti sui decreti</h2>
 <ul>
-  <li><b>Come lo registriamo.</b> Quando tocchi «Favorevole» o «Contrario» l'app ti chiede di confermare, spiegandoti che il voto
-      esprime una tua opinione e come lo useremo; il voto è registrato solo se confermi. Confermare è il tuo consenso esplicito.</li>
+  <li><b>Come lo registriamo.</b> Quando tocchi «Favorevole» o «Contrario» l'app ti chiede di confermare, perché un voto inviato non
+      si può modificare; il voto è registrato solo se confermi. Confermando acconsenti in modo esplicito a che il voto sia trattato come
+      descritto in questa sezione.</li>
   <li><b>Collegato a cosa.</b> Al codice dell'app, alla data e alla tua regione, mai al tuo nome. Chi gestisce il servizio potrebbe in teoria
       ricondurre un voto a un'installazione dell'app, non a una persona: per questo sono <b>dati pseudonimi</b> e li proteggiamo come dati personali.</li>
   <li><b>Chi lo vede.</b> Nell'app e altrove compaiono solo i totali e le percentuali, per l'Italia e per regione. Nessuno, né altri utenti né
@@ -179,47 +173,65 @@ facoltativi e, se non li dai, l'app funziona lo stesso (senza posizione, per ese
       <b>arrotondata a circa 100 metri</b>, senza il codice dell'app né altri tuoi dati; teniamo solo i nomi di Comune, provincia e
       regione, mai vie, numeri civici o codici postali. La risposta resta in una memoria temporanea per 24 ore, così la stessa zona non
       viene chiesta di nuovo.</li>
-  <li>Conserviamo la posizione <b>arrotondata a circa 1 km</b>, solo per sapere che l'hai condivisa. <mark class="todo">[da confermare: le
-      posizioni registrate prima dell'ottobre 2026 vanno arrotondate allo stesso modo prima di pubblicare questa frase]</mark></li>
+  <li>Dal 13 ottobre 2026 conserviamo la posizione <b>arrotondata a circa 1 km</b>, solo per sapere che l'hai condivisa. Le posizioni
+      ricevute prima di quella data sono conservate come erano arrivate. Tutte sono <b>cifrate</b> nel database (<a href="#sicurezza">sezione 13</a>)
+      e, quando l'app le chiede, il server le restituisce arrotondate a circa 1 km.</li>
   <li>Senza posizione stimiamo la regione dall'<b>indirizzo IP</b>, con un database che si trova sul nostro server («IP Geolocation by
       DB-IP», licenza CC BY 4.0): l'indirizzo non viene inviato a nessuno.</li>
   <li>Per proporti il questionario del tuo Comune, l'app può inviare la posizione al nostro server, che la confronta con i confini
-      comunali ISTAT e <b>non la conserva</b>.</li>
+      comunali ISTAT e <b>non la conserva</b>. Lo stesso vale per la verifica dell'identità (<a href="#verifica">sezione 8</a>): la posizione
+      serve solo al confronto e non è conservata.</li>
 </ul>
 
 <h2 id="questionari">7. I questionari dei Comuni («Ascolto civico»)</h2>
-<p>Alcuni Comuni usano Io Conto per chiedere ai propri cittadini come vanno i servizi e cosa fare prima. In questo caso:</p>
+<p>Alcuni Comuni usano Io Conto per chiedere ai propri cittadini come vanno i servizi e cosa fare prima, con il questionario completo
+o con questionari brevi su un solo tema (per esempio un evento, la mensa, un cantiere), aperti per un periodo deciso dal Comune. In questo caso:</p>
 <ul>
   <li><b>il titolare è il Comune</b>; Io Conto gestisce il servizio per suo conto come <b>responsabile del trattamento</b> (art. 28 GDPR),
       con un accordo scritto che lo obbliga a usare i dati solo per il questionario;</li>
-  <li>l'app ti mostra <b>l'informativa del Comune</b> prima della prima domanda; il testo completo è anche a
-      <code>https://ic.eu.com/app/ascolto-civico/privacy/</code> seguito dal codice ISTAT del Comune;</li>
+  <li>prima della prima domanda l'app ti mostra in breve <b>l'informativa del Comune</b>; il testo completo te lo dà il Comune, e puoi
+      chiederlo anche a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>;</li>
+  <li>l'app ti propone i questionari del Comune che scegli o che ricava dalla tua posizione (<a href="#posizione">sezione 6</a>). Il Comune può
+      anche diffondere un <b>collegamento</b> o un codice QR (indirizzo <code>link.ioconto.xyz</code>) che apre il questionario nell'app: il
+      collegamento è firmato, così non si può falsificare, e le visite a quell'indirizzo sono registrate senza indirizzo IP né tipo di browser;</li>
   <li>partecipare è facoltativo; non ti chiediamo nome o contatti, e non ci sono domande a risposta libera;</li>
-  <li>le risposte sono registrate con un codice cifrato al posto del codice dell'app e <b>non sono collegate ai tuoi voti</b> sui decreti;</li>
-  <li>il Comune riceve <b>solo risultati complessivi</b>, mai le risposte di una persona; i gruppi con meno di 10 risposte non sono mostrati;</li>
-  <li>puoi cancellare le tue risposte dall'app («Cancella le mie risposte»).</li>
+  <li>le risposte sono registrate con un codice cifrato al posto del codice dell'app e <b>non sono collegate ai tuoi voti</b> sui decreti.
+      Se interrompi un questionario, le risposte date fin lì sono conservate per farti riprendere e cancellate quando il questionario chiude;</li>
+  <li>il Comune riceve <b>solo risultati complessivi</b>, mai le risposte di una persona; i gruppi con meno di 10 risposte non sono mostrati.
+      Il personale del Comune li consulta con un account personale protetto da password e da un codice generato sul proprio telefono;</li>
+  <li>puoi cancellare le tue risposte dall'app: nella sezione dei questionari, «Privacy e risposte» › «Cancella le mie risposte».</li>
 </ul>
 
-<h2 id="verifica">8. La verifica dell'identità (solo se il Comune la chiede)</h2>
-<p>Un Comune può chiedere che le risposte arrivino da propri residenti maggiorenni. In questo caso l'app ti propone di fotografare la
-carta d'identità elettronica (fronte e retro), la patente o la tessera sanitaria. La verifica è <b>facoltativa</b>: puoi rispondere anche senza.</p>
+<h2 id="verifica">8. La verifica dell'identità</h2>
+<p>Dal 20 novembre 2026 la verifica dell'identità è attiva. Serve ai Comuni per sapere che le risposte ai loro questionari arrivano da
+persone vere e maggiorenni, e da quale Comune. L'app ti propone di fotografare il <b>fronte</b> della carta d'identità elettronica, della
+patente o della tessera sanitaria, prima di un questionario che la chiede. La verifica è <b>facoltativa</b>: puoi rispondere anche senza, e
+la risposta è registrata come non verificata.</p>
 <ul>
-  <li>La foto è inviata cifrata al nostro server, letta in memoria da un programma isolato (senza rete né disco) e <b>cancellata in pochi secondi</b>.
-      L'app non la salva sul telefono né in galleria. <b>Nessuno guarda la foto</b> e il viso sul documento <b>non viene analizzato</b>.</li>
-  <li>Del documento <b>non conserviamo nulla</b>: né nome, né codice fiscale, né numero, né date, né indirizzo. Conserviamo l'esito
-      («verificato»), il tipo di documento, il Comune e come è stato stabilito, il confronto con la posizione (stesso Comune o stessa
-      regione) e un'impronta cifrata con chiave segreta di una parte del codice fiscale, che serve solo a impedire che lo stesso documento
-      verifichi più telefoni e non permette di risalire al codice.</li>
-  <li>La verifica dura <b>12 mesi</b>, poi è cancellata; puoi cancellarla prima dall'app («Cancella la verifica»).</li>
+  <li>La foto è inviata cifrata al nostro server, letta in memoria da un programma isolato (senza accesso alla rete e senza poter scrivere sul
+      disco) e <b>cancellata in pochi secondi</b>. Non è salvata né sul server né sul telefono, e <b>nessuno la guarda</b>. Il viso sul documento
+      <b>non viene analizzato</b>.</li>
+  <li>Come tutte le richieste dell'app, la foto attraversa la rete di Cloudflare (<a href="#destinatari">sezione 10</a>): lì il collegamento
+      cifrato viene aperto e subito cifrato di nuovo verso il nostro server.</li>
+  <li>Il server controlla che il documento sia autentico nel formato, non scaduto e di una persona maggiorenne, e trova il Comune stampato: il Comune che
+      ha rilasciato la carta d'identità oppure, per patente e tessera sanitaria, il luogo di nascita, che ti chiediamo di confermare. Se hai
+      dato la posizione, il server la confronta con quel Comune (stesso Comune o stessa regione) e <b>non la conserva</b>.</li>
+  <li>Del documento <b>non conserviamo nulla</b>: né foto, né nome, né codice fiscale, né numero, né date, né indirizzo. Conserviamo l'esito
+      («verificato»), il tipo di documento, il Comune e come è stato stabilito (in forma cifrata con chiave segreta), il risultato del confronto
+      con la posizione e un codice ricavato con chiave segreta da una parte del codice fiscale, che serve solo a impedire che la stessa persona
+      verifichi più telefoni e non permette di risalire al codice. Ogni risposta a un questionario registra solo se chi l'ha data era verificato.</li>
+  <li>Per limitare gli abusi contiamo i tentativi di ogni installazione dell'app: al massimo 5 foto in un'ora; il conteggio è cancellato dopo un'ora.</li>
+  <li>La verifica dura <b>12 mesi</b>, poi è cancellata; puoi cancellarla prima dall'app («Privacy e risposte» › «Cancella la verifica»).</li>
   <li>È un controllo automatico che non ha effetti giuridici: se non riesce puoi rispondere comunque, e puoi chiederci di riesaminarlo
       scrivendo a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</li>
-  <li>Titolare è il Comune, che ne valuta l'impatto (art. 35 GDPR) prima di attivarla; i dettagli sono nella sua informativa.</li>
+  <li>Per le verifiche fatte per il questionario di un Comune il titolare è quel Comune; Io Conto la gestisce per suo conto. I dettagli sono
+      nella sua informativa.</li>
 </ul>
 
 <h2 id="sito">9. Il sito ic.eu.com e i cookie</h2>
 <p>Il sito è ospitato da GitHub Pages (GitHub, Inc.) e raggiunto attraverso la rete di Cloudflare, Inc., che per farlo funzionare e
-proteggerlo trattano l'indirizzo IP e i dati tecnici della connessione. Il carattere tipografico del sito è caricato da un servizio
-esterno (fonts.cdnfonts.com), che riceve l'indirizzo IP. <mark class="todo">[consigliato: ospitare il carattere sul sito stesso]</mark></p>
+proteggerlo trattano l'indirizzo IP e i dati tecnici della connessione. Il carattere tipografico della pagina principale del sito è
+caricato da un servizio esterno (fonts.cdnfonts.com), che riceve l'indirizzo IP del tuo browser; questa pagina non lo usa.</p>
 <p><b>L'app Io Conto non usa cookie né strumenti di tracciamento pubblicitario.</b> Il sito usa:</p>
 <div class="table"><table>
   <thead><tr><th>Strumento</th><th>Di chi</th><th>A cosa serve</th><th>Quando</th><th>Durata</th></tr></thead>
@@ -245,9 +257,9 @@ proprio compito e con un contratto che lo obbliga a proteggerli (responsabili de
     <tr><td>Hetzner Online GmbH</td><td>il server, il database, le copie di sicurezza</td><td>tutti i dati dell'app</td><td>Germania</td></tr>
     <tr><td>Cloudflare, Inc.</td><td>rete che protegge e accelera il collegamento al server e al sito</td><td>indirizzo IP, dati tecnici della connessione e il contenuto delle richieste mentre attraversano la sua rete</td><td>rete mondiale; sede negli USA</td></tr>
     <tr><td>Mapbox, Inc.</td><td>trovare il nome del luogo dalla posizione</td><td>la posizione arrotondata a circa 100 m, senza altri dati</td><td>USA</td></tr>
-    <tr><td>Google LLC (Firebase) e Apple Inc.</td><td>attestazione dell'app e notifiche, quando attive; distribuzione dell'app negli store</td><td>gettoni tecnici del dispositivo</td><td>USA e UE</td></tr>
+    <tr><td>Google LLC (Firebase) e Apple Inc.</td><td>attestazione dell'app, quando attiva; distribuzione dell'app negli store</td><td>gettoni tecnici del dispositivo</td><td>USA e UE</td></tr>
     <tr><td>GitHub, Inc.</td><td>ospitare il sito</td><td>indirizzo IP dei visitatori del sito</td><td>USA</td></tr>
-    <tr><td><mark class="todo">[fornitore della posta]</mark></td><td>la casella privacy@ic.eu.com</td><td>quello che ci scrivi</td><td><mark class="todo">[…]</mark></td></tr>
+    <tr><td>Cloudflare, Inc. (inoltro della posta)</td><td>riceve i messaggi per privacy@ic.eu.com e info@ic.eu.com e li inoltra alla casella di chi li gestisce</td><td>quello che ci scrivi e il tuo indirizzo email</td><td>rete mondiale; sede negli USA</td></tr>
   </tbody>
 </table></div>
 <p>Google e Meta ricevono dati dal sito solo con il tuo consenso (<a href="#sito">sezione 9</a>). OpenAI, che usiamo per preparare le
@@ -266,13 +278,16 @@ scrivendo a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</p>
 <div class="table"><table>
   <thead><tr><th>Dati</th><th>Per quanto</th></tr></thead>
   <tbody>
-    <tr><td>Codice dell'app, identificativo del dispositivo, posizione arrotondata, regione, voti</td><td>finché usi il servizio; li cancelliamo quando lo chiedi o quando il servizio termina <mark class="todo">[da decidere: cancellazione automatica dopo 24 mesi senza uso]</mark></td></tr>
+    <tr><td>Codice dell'app, identificativo del dispositivo, posizione, regione, voti</td><td>finché usi il servizio; li cancelliamo quando lo chiedi o quando il servizio termina</td></tr>
     <tr><td>Registro delle richieste al server (indirizzo IP, data, indirizzo richiesto, versione dell'app)</td><td>15 giorni</td></tr>
     <tr><td>Registri tecnici degli errori</td><td>5 settimane</td></tr>
     <tr><td>Nome del luogo trovato per una posizione (memoria temporanea)</td><td>24 ore</td></tr>
     <tr><td>Copie di sicurezza del database</td><td>14 giorni: una cancellazione vi si riflette entro questo tempo</td></tr>
-    <tr><td>Risposte ai questionari dei Comuni</td><td>secondo l'informativa del Comune (oggi: 24 mesi dalla chiusura, poi restano solo i risultati complessivi)</td></tr>
+    <tr><td>Risposte ai questionari dei Comuni</td><td>secondo l'informativa del Comune (oggi: 24 mesi dalla chiusura del questionario, poi restano solo i risultati complessivi)</td></tr>
+    <tr><td>Risposte parziali di un questionario interrotto</td><td>fino alla chiusura del questionario</td></tr>
+    <tr><td>Questionari aperti e non inviati (servono a contare quanti li completano)</td><td>90 giorni dalla chiusura del questionario</td></tr>
     <tr><td>Esito della verifica dell'identità</td><td>12 mesi; la foto non è mai conservata</td></tr>
+    <tr><td>Tentativi di verifica di un'installazione</td><td>un'ora</td></tr>
     <tr><td>Email e richieste sui diritti</td><td>il tempo di gestirle, poi fino a 24 mesi per poter dimostrare come le abbiamo gestite</td></tr>
     <tr><td>Strumenti del sito</td><td>vedi la tabella della <a href="#sito">sezione 9</a></td></tr>
   </tbody>
@@ -284,8 +299,9 @@ un nuovo utente. Per cancellare i dati sul server scrivici (<a href="#diritti">s
 <p>Proteggiamo i dati con misure tecniche e organizzative adeguate al rischio (art. 32 GDPR), tra cui: collegamenti cifrati (HTTPS) per il sito e per le
 versioni attuali dell'app; server nell'Unione europea, con accesso amministrativo riservato e solo con chiave; un utente del
 database con i soli permessi indispensabili; limiti al numero di richieste e blocco automatico degli abusi; dati pseudonimi al posto dei
-nomi; posizioni arrotondate; registri senza le risposte ai questionari; copie di sicurezza conservate per poco tempo; aggiornamenti di
-sicurezza automatici. Le versioni meno recenti dell'app, ancora installate su alcuni telefoni, si collegano al server senza
+nomi; posizione e identificativo del dispositivo <b>cifrati nel database</b>; posizioni arrotondate; registri senza le risposte ai questionari
+e senza le foto dei documenti; copie di sicurezza <b>cifrate</b> e conservate per 14 giorni; accesso del personale dei Comuni con password e
+codice generato sul telefono; aggiornamenti di sicurezza automatici. Le versioni meno recenti dell'app, ancora installate su alcuni telefoni, si collegano al server senza
 cifratura: quel collegamento sarà chiuso appena non saranno più in uso, e ti invitiamo ad aggiornare l'app. Nessun sistema è sicuro al 100%: se una violazione mettesse a rischio i tuoi dati, la notificheremo al Garante entro
 72 ore e, se il rischio fosse elevato, informeremo anche te (artt. 33 e 34 GDPR).</p>
 
@@ -299,11 +315,11 @@ scriverci a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</p>
 la <b>portabilità</b> dei dati che ci hai dato, di <b>opporti</b> ai trattamenti basati sul legittimo interesse e di <b>revocare il consenso</b>
 in ogni momento, senza che ciò tocchi quanto fatto prima della revoca (artt. 7 e 15-22 GDPR).</p>
 <ul>
-  <li><b>Dall'app:</b> «Cancella le mie risposte» e «Cancella la verifica» per i questionari; i permessi di posizione, ID dispositivo e notifiche
-      dalle impostazioni.</li>
-  <li><b>Per tutto il resto</b> (per esempio cancellare i voti e i dati dell'app): scrivi a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>
-      indicando il <b>codice dell'app</b>, che trovi in Impostazioni › Privacy. Poiché non conosciamo il tuo nome, è il solo modo di trovare i tuoi
-      dati: senza codice potremmo non riuscire a farlo (art. 11 GDPR).</li>
+  <li><b>Dall'app:</b> nella sezione dei questionari, «Privacy e risposte» › «Cancella le mie risposte» (risposte, questionari aperti e
+      verifica) e «Cancella la verifica»; i permessi di posizione e ID dispositivo dalle impostazioni del telefono.</li>
+  <li><b>Per tutto il resto</b> (per esempio cancellare i voti e i dati dell'app): scrivi a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.
+      Poiché non conosciamo il tuo nome, i tuoi dati si trovano solo con il <b>codice dell'app</b>: quando l'app te lo mostra, indicalo nel
+      messaggio; altrimenti scrivici comunque e ti diremo come procedere. Senza codice potremmo non riuscire a trovare i tuoi dati (art. 11 GDPR).</li>
   <li>Rispondiamo entro un mese (prorogabile di due mesi nei casi complessi, e te lo diciamo). È gratuito.</li>
   <li>Se ritieni che i tuoi dati siano trattati in violazione della legge puoi proporre <b>reclamo al Garante per la protezione dei dati
       personali</b> (<a href="https://www.garanteprivacy.it">www.garanteprivacy.it</a>, Piazza Venezia 11, 00187 Roma), o all'autorità del
@@ -336,7 +352,7 @@ che si applichi e, quando serve, ti chiediamo di nuovo il consenso.</p>
 
 <footer>
   <p>Io Conto · <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a> · <a href="https://ic.eu.com">ic.eu.com</a><br>
-  Versione 2.0, <mark class="todo">[data]</mark>. Sostituisce la versione del 6 febbraio 2026.</p>
+  Versione 2.0, 20 novembre 2026. Sostituisce la versione del 6 febbraio 2026.</p>
 </footer>
 </main>
 </body>
