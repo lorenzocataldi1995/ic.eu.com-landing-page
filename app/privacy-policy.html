@@ -1,7 +1,10 @@
 <!doctype html>
 <!--
-  Privacy e cookie policy di Io Conto, versione 2.0 del 20 novembre 2026 (sostituisce quella del 6 febbraio 2026).
-  Descrive quello che il servizio fa a questa data, verificato sul codice del server (stack/ioconto-app/server).
+  Privacy e cookie policy di Io Conto, versione 2.1 del 23 novembre 2026 (sostituisce la 2.0 del 20 novembre 2026).
+  Descrive quello che il servizio fa a questa data, verificato sul codice del server (stack/ioconto-app/server, 1.9.2)
+  e sul server di produzione (ops/tools/privacy-facts.sh, 23/11/2026). Novità della 2.1: cancellazione di profilo e voti
+  dall'app e registro delle cancellazioni; origine reale del codice dell'app; chi vede i singoli voti; tutte le posizioni
+  conservate a circa 1 km; Expo tra i fornitori; codice per l'assistenza (docs/app-store-esiti-backend.md, B2.3).
   Da completare dal titolare: i suoi dati legali (sezione 1). Da tenere allineati: app-backend-interop.md, richieste 9 e 10.
 -->
 <html lang="it">
@@ -50,7 +53,7 @@
 <header class="top"><div class="in">
   <a class="home" href="https://ic.eu.com"><img src="../icon.svg" alt="">Io Conto</a>
   <h1>Privacy e cookie policy</h1>
-  <p>App Io Conto e sito ic.eu.com · versione 2.0 · in vigore dal 20 novembre 2026</p>
+  <p>App Io Conto e sito ic.eu.com · versione 2.1 · in vigore dal 23 novembre 2026</p>
 </div></header>
 
 <main>
@@ -58,14 +61,14 @@
 <section class="summary" aria-labelledby="breve">
   <h2 id="breve">In breve</h2>
   <ul>
-    <li><b>Non ti chiediamo nome, email o telefono</b> per usare l'app. Ti riconosciamo con un codice casuale creato dall'app al primo avvio.</li>
-    <li><b>Il tuo voto sui decreti è un'opinione politica</b>: lo registriamo solo quando confermi di votare, senza il tuo nome, e lo usiamo solo per i risultati nazionali e per regione. Nessuno vede come hai votato.</li>
+    <li><b>Non ti chiediamo nome, email o telefono</b> per usare l'app. Ti riconosciamo con un codice dell'installazione creato dall'app, che non contiene il tuo nome né il tuo numero.</li>
+    <li><b>Il tuo voto sui decreti è un'opinione politica</b>: lo registriamo solo quando confermi di votare, senza il tuo nome, e lo usiamo solo per i risultati nazionali e per regione. Gli altri utenti e i Comuni vedono solo i totali; il singolo voto, senza nome, lo vedono solo le persone autorizzate di Io Conto, quando serve a gestire il servizio o a rispondere alle tue richieste.</li>
     <li><b>La posizione è facoltativa</b>: se la concedi, la usiamo per sapere la tua regione e il tuo Comune e la conserviamo solo arrotondata a circa 1 km. Senza, stimiamo la regione dall'indirizzo IP, sul nostro server.</li>
     <li><b>I questionari dei Comuni</b> («Ascolto civico») hanno un'informativa propria: il titolare è il Comune, che riceve solo risultati complessivi. Le risposte non sono collegate ai tuoi voti.</li>
     <li><b>La foto del documento</b>, quando fai la verifica dell'identità per un questionario, è letta in pochi secondi e cancellata: non la conserva nessuno.</li>
     <li><b>Server in Germania</b>. Non vendiamo dati e nell'app non c'è pubblicità né profilazione.</li>
     <li><b>Sul sito ic.eu.com</b> usiamo strumenti di misura e pubblicità di Google e Meta solo se li accetti.</li>
-    <li>Puoi chiedere in ogni momento di vedere, correggere o cancellare i tuoi dati: <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</li>
+    <li>Puoi <b>cancellare profilo e voti dall'app</b>, in Impostazioni › Privacy (nelle versioni dell'app che lo prevedono), e chiedere in ogni momento di vedere, correggere o cancellare i tuoi dati: <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</li>
   </ul>
 </section>
 
@@ -121,7 +124,8 @@ errori o semplificazioni, e fa sempre fede il testo ufficiale. Per prepararle no
 <div class="table"><table>
   <thead><tr><th>Dato</th><th>Da dove</th><th>Perché</th><th>Base giuridica</th></tr></thead>
   <tbody>
-    <tr><td><b>Codice dell'app</b>: un identificativo casuale (UUID) creato dall'app al primo avvio</td><td>l'app, conservato in modo protetto sul telefono</td>
+    <tr><td><b>Codice dell'app</b>: un identificativo dell'installazione creato dall'app. Su iPhone è un codice casuale; su Android è ricavato
+        dall'identificativo che il telefono assegna all'app per la protezione dei contenuti</td><td>l'app; su iPhone è conservato nel portachiavi del telefono</td>
         <td>riconoscere la tua installazione: un voto per decreto, i tuoi voti già dati, le tue richieste sui diritti</td>
         <td>esecuzione del servizio che chiedi (art. 6.1.b GDPR)</td></tr>
     <tr><td><b>Identificativo del dispositivo</b>, solo se lo consenti nella schermata «ID Dispositivo»</td><td>il sistema operativo del telefono</td>
@@ -132,7 +136,7 @@ errori o semplificazioni, e fa sempre fede il testo ufficiale. Per prepararle no
         <td>consenso (art. 6.1.a GDPR e art. 122 Codice privacy), revocabile dalle impostazioni del telefono</td></tr>
     <tr><td><b>Regione, provincia, Comune</b></td><td>calcolati dalla posizione o, senza, dall'indirizzo IP</td>
         <td>i risultati dei voti per regione</td><td>esecuzione del servizio (art. 6.1.b)</td></tr>
-    <tr><td><b>I tuoi voti</b> sui decreti: favorevole o contrario, data, regione</td><td>tu, quando confermi un voto</td>
+    <tr><td><b>I tuoi voti</b> sui decreti: favorevole o contrario, data, regione e, quando l'app la invia, la versione del testo di consenso che hai confermato</td><td>tu, quando confermi un voto</td>
         <td>contare il voto nei risultati nazionali e regionali; ricordarti che hai già votato</td>
         <td><b>consenso esplicito</b> (art. 9.2.a GDPR), perché un voto esprime un'opinione politica (<a href="#voti">sezione 5</a>)</td></tr>
     <tr><td><b>Indirizzo IP</b>, versione dell'app, sistema operativo, data e ora delle richieste</td><td>la connessione del telefono al server</td>
@@ -143,6 +147,11 @@ errori o semplificazioni, e fa sempre fede il testo ufficiale. Per prepararle no
         <td>respingere copie contraffatte e richieste automatiche</td><td>legittimo interesse alla sicurezza (art. 6.1.f)</td></tr>
     <tr><td><b>Quello che ci scrivi</b> per email</td><td>tu</td><td>risponderti, gestire le richieste sui diritti</td>
         <td>esecuzione della tua richiesta; obbligo legale per le richieste sui diritti (art. 6.1.c)</td></tr>
+    <tr><td><b>Registro delle cancellazioni</b>: un'impronta del codice dell'app ottenuta con una chiave segreta (non il codice), la data
+        e se la cancellazione è partita dall'app o da una tua richiesta</td><td>il nostro server, quando cancelli profilo e voti</td>
+        <td>dimostrare che abbiamo cancellato i dati; non ricrearli se dovessimo ripristinare una copia di sicurezza; evitare che l'app
+        ricrei da sola il profilo con lo stesso codice</td>
+        <td>obbligo legale di dimostrare il rispetto del GDPR (artt. 5.2 e 6.1.c)</td></tr>
   </tbody>
 </table></div>
 <p>Non chiediamo e non trattiamo nome, email, telefono, contatti della rubrica, foto (salvo il documento della <a href="#verifica">sezione 8</a>,
@@ -155,13 +164,16 @@ facoltativi e, se non li dai, l'app funziona lo stesso (senza posizione, per ese
 <ul>
   <li><b>Come lo registriamo.</b> Quando tocchi «Favorevole» o «Contrario» l'app ti chiede di confermare, perché un voto inviato non
       si può modificare; il voto è registrato solo se confermi. Confermando acconsenti in modo esplicito a che il voto sia trattato come
-      descritto in questa sezione.</li>
+      descritto in questa sezione. Quando l'app la invia, registriamo con il voto anche la versione del testo che hai confermato.</li>
   <li><b>Collegato a cosa.</b> Al codice dell'app, alla data e alla tua regione, mai al tuo nome. Chi gestisce il servizio potrebbe in teoria
       ricondurre un voto a un'installazione dell'app, non a una persona: per questo sono <b>dati pseudonimi</b> e li proteggiamo come dati personali.</li>
-  <li><b>Chi lo vede.</b> Nell'app e altrove compaiono solo i totali e le percentuali, per l'Italia e per regione. Nessuno, né altri utenti né
-      i Comuni, vede come hai votato. I voti non sono collegati alle risposte dei questionari dei Comuni.</li>
+  <li><b>Chi lo vede.</b> Nell'app e altrove compaiono solo i totali e le percentuali, per l'Italia e per regione: gli altri utenti e i
+      Comuni non vedono mai come hai votato. Il singolo voto, collegato al codice dell'app e mai a un nome, è visibile solo alle persone
+      autorizzate di Io Conto, tenute alla riservatezza, quando serve a gestire il servizio o a rispondere alle tue richieste (per esempio
+      se chiedi di vedere o cancellare i tuoi dati). I voti non sono collegati alle risposte dei questionari dei Comuni.</li>
   <li><b>Si può cambiare?</b> Un voto non si modifica: è la regola che rende i risultati confrontabili. Puoi però <b>revocare il consenso</b>
-      chiedendo la cancellazione dei tuoi dati (<a href="#diritti">sezione 15</a>): cancelliamo i tuoi voti e i totali si aggiornano.</li>
+      cancellando profilo e voti: dall'app, in Impostazioni › Privacy › «Cancella profilo e voti» (nelle versioni dell'app che lo prevedono),
+      oppure scrivendoci (<a href="#diritti">sezione 15</a>). I voti sono cancellati subito e i totali si aggiornano.</li>
   <li><b>Che valore ha.</b> I risultati raccolgono le opinioni di chi usa l'app: non sono un sondaggio statistico rappresentativo, né un
       referendum, una petizione o una consultazione ufficiale (<a href="#responsabilita">sezione 16</a>).</li>
 </ul>
@@ -173,9 +185,9 @@ facoltativi e, se non li dai, l'app funziona lo stesso (senza posizione, per ese
       <b>arrotondata a circa 100 metri</b>, senza il codice dell'app né altri tuoi dati; teniamo solo i nomi di Comune, provincia e
       regione, mai vie, numeri civici o codici postali. La risposta resta in una memoria temporanea per 24 ore, così la stessa zona non
       viene chiesta di nuovo.</li>
-  <li>Dal 13 ottobre 2026 conserviamo la posizione <b>arrotondata a circa 1 km</b>, solo per sapere che l'hai condivisa. Le posizioni
-      ricevute prima di quella data sono conservate come erano arrivate. Tutte sono <b>cifrate</b> nel database (<a href="#sicurezza">sezione 13</a>)
-      e, quando l'app le chiede, il server le restituisce arrotondate a circa 1 km.</li>
+  <li>Conserviamo la posizione <b>arrotondata a circa 1 km</b>, solo per sapere che l'hai condivisa, e del luogo solo Comune, provincia,
+      regione e Stato: così per le posizioni ricevute dal 13 ottobre 2026 e, dal 23 novembre 2026, anche per quelle ricevute prima. Tutte
+      sono <b>cifrate</b> nel database (<a href="#sicurezza">sezione 13</a>).</li>
   <li>Senza posizione stimiamo la regione dall'<b>indirizzo IP</b>, con un database che si trova sul nostro server («IP Geolocation by
       DB-IP», licenza CC BY 4.0): l'indirizzo non viene inviato a nessuno.</li>
   <li>Per proporti il questionario del tuo Comune, l'app può inviare la posizione al nostro server, che la confronta con i confini
@@ -259,6 +271,7 @@ proprio compito e con un contratto che lo obbliga a proteggerli (responsabili de
     <tr><td>Mapbox, Inc.</td><td>trovare il nome del luogo dalla posizione</td><td>la posizione arrotondata a circa 100 m, senza altri dati</td><td>USA</td></tr>
     <tr><td>Google LLC (Firebase) e Apple Inc.</td><td>attestazione dell'app, quando attiva; distribuzione dell'app negli store</td><td>gettoni tecnici del dispositivo</td><td>USA e UE</td></tr>
     <tr><td>GitHub, Inc.</td><td>ospitare il sito</td><td>indirizzo IP dei visitatori del sito</td><td>USA</td></tr>
+    <tr><td>Expo (650 Industries, Inc.)</td><td>distribuire gli aggiornamenti dell'app: il telefono chiede a Expo se ce ne sono di nuovi</td><td>indirizzo IP e dati tecnici del telefono e dell'app (sistema operativo, versione); mai voti né dati del profilo</td><td>USA</td></tr>
     <tr><td>Cloudflare, Inc. (inoltro della posta)</td><td>riceve i messaggi per privacy@ic.eu.com e info@ic.eu.com e li inoltra alla casella di chi li gestisce</td><td>quello che ci scrivi e il tuo indirizzo email</td><td>rete mondiale; sede negli USA</td></tr>
   </tbody>
 </table></div>
@@ -269,7 +282,7 @@ dati del tuo account come titolari autonomi, secondo le loro regole.</p>
 servizio, con le stesse garanzie e dopo averti avvisato.</p>
 
 <h2 id="trasferimenti">11. Dati fuori dall'Unione europea</h2>
-<p>Alcuni fornitori hanno sede negli Stati Uniti (Cloudflare, Mapbox, GitHub, Google, Meta). I trasferimenti avvengono con le garanzie del
+<p>Alcuni fornitori hanno sede negli Stati Uniti (Cloudflare, Mapbox, GitHub, Expo, Google, Meta). I trasferimenti avvengono con le garanzie del
 GDPR: la decisione di adeguatezza della Commissione europea del 10 luglio 2023 (EU-U.S. Data Privacy Framework) per le società che vi
 aderiscono, oppure le clausole contrattuali tipo approvate dalla Commissione (art. 46 GDPR). Puoi chiederci una copia delle garanzie
 scrivendo a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</p>
@@ -278,11 +291,12 @@ scrivendo a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</p>
 <div class="table"><table>
   <thead><tr><th>Dati</th><th>Per quanto</th></tr></thead>
   <tbody>
-    <tr><td>Codice dell'app, identificativo del dispositivo, posizione, regione, voti</td><td>finché usi il servizio; li cancelliamo quando lo chiedi o quando il servizio termina</td></tr>
+    <tr><td>Codice dell'app, identificativo del dispositivo, posizione, regione, voti</td><td>finché usi il servizio; li cancelliamo quando lo chiedi (dall'app o per email) o quando il servizio termina</td></tr>
+    <tr><td>Registro delle cancellazioni (impronta del codice dell'app, data, origine)</td><td>24 mesi</td></tr>
     <tr><td>Registro delle richieste al server (indirizzo IP, data, indirizzo richiesto, versione dell'app)</td><td>15 giorni</td></tr>
     <tr><td>Registri tecnici degli errori</td><td>5 settimane</td></tr>
     <tr><td>Nome del luogo trovato per una posizione (memoria temporanea)</td><td>24 ore</td></tr>
-    <tr><td>Copie di sicurezza del database</td><td>14 giorni: una cancellazione vi si riflette entro questo tempo</td></tr>
+    <tr><td>Copie di sicurezza del database</td><td>14 giorni: una cancellazione vi si riflette entro questo tempo, e se ne ripristinassimo una riapplicheremmo le cancellazioni fatte dopo</td></tr>
     <tr><td>Risposte ai questionari dei Comuni</td><td>secondo l'informativa del Comune (oggi: 24 mesi dalla chiusura del questionario, poi restano solo i risultati complessivi)</td></tr>
     <tr><td>Risposte parziali di un questionario interrotto</td><td>fino alla chiusura del questionario</td></tr>
     <tr><td>Questionari aperti e non inviati (servono a contare quanti li completano)</td><td>90 giorni dalla chiusura del questionario</td></tr>
@@ -292,8 +306,9 @@ scrivendo a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</p>
     <tr><td>Strumenti del sito</td><td>vedi la tabella della <a href="#sito">sezione 9</a></td></tr>
   </tbody>
 </table></div>
-<p>Disinstallare l'app non cancella i dati sul server: il codice dell'app resta solo sul telefono, quindi una nuova installazione è per noi
-un nuovo utente. Per cancellare i dati sul server scrivici (<a href="#diritti">sezione 15</a>).</p>
+<p>Disinstallare l'app non cancella i dati sul server, e reinstallandola il telefono può ritrovare lo stesso codice (su iPhone resta nel
+portachiavi, su Android è ricavato dal telefono). Per cancellare i dati sul server usa «Cancella profilo e voti» nell'app prima di
+disinstallarla, oppure scrivici (<a href="#diritti">sezione 15</a>). Dopo una cancellazione dall'app, l'app usa un codice nuovo.</p>
 
 <h2 id="sicurezza">13. Sicurezza</h2>
 <p>Proteggiamo i dati con misure tecniche e organizzative adeguate al rischio (art. 32 GDPR), tra cui: collegamenti cifrati (HTTPS) per il sito e per le
@@ -315,11 +330,15 @@ scriverci a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</p>
 la <b>portabilità</b> dei dati che ci hai dato, di <b>opporti</b> ai trattamenti basati sul legittimo interesse e di <b>revocare il consenso</b>
 in ogni momento, senza che ciò tocchi quanto fatto prima della revoca (artt. 7 e 15-22 GDPR).</p>
 <ul>
-  <li><b>Dall'app:</b> nella sezione dei questionari, «Privacy e risposte» › «Cancella le mie risposte» (risposte, questionari aperti e
-      verifica) e «Cancella la verifica»; i permessi di posizione e ID dispositivo dalle impostazioni del telefono.</li>
-  <li><b>Per tutto il resto</b> (per esempio cancellare i voti e i dati dell'app): scrivi a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.
-      Poiché non conosciamo il tuo nome, i tuoi dati si trovano solo con il <b>codice dell'app</b>: quando l'app te lo mostra, indicalo nel
-      messaggio; altrimenti scrivici comunque e ti diremo come procedere. Senza codice potremmo non riuscire a trovare i tuoi dati (art. 11 GDPR).</li>
+  <li><b>Dall'app:</b> in Impostazioni › Privacy › «Cancella profilo e voti» (nelle versioni dell'app che lo prevedono) cancelli profilo e
+      voti; nella sezione dei questionari, «Privacy e risposte» › «Cancella le mie risposte» (risposte, questionari aperti e verifica) e
+      «Cancella la verifica»; i permessi di posizione e ID dispositivo dalle impostazioni del telefono.</li>
+  <li><b>Per tutto il resto</b> (per esempio vedere i tuoi dati, o cancellarli da una versione dell'app che non lo prevede): scrivi a
+      <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>. Poiché non conosciamo il tuo nome, i tuoi dati si trovano solo tramite il codice
+      dell'app: indica nel messaggio il <b>codice per l'assistenza</b> che trovi in Impostazioni › Privacy (nelle versioni meno recenti, il
+      codice dell'app, se l'app te lo mostra). Il codice per l'assistenza non permette a nessuno di vedere o cancellare i tuoi dati: serve
+      solo a noi per trovarli. Se non lo trovi, scrivici comunque e ti diremo come procedere. Senza codice potremmo non riuscire a trovare i
+      tuoi dati (art. 11 GDPR).</li>
   <li>Rispondiamo entro un mese (prorogabile di due mesi nei casi complessi, e te lo diciamo). È gratuito.</li>
   <li>Se ritieni che i tuoi dati siano trattati in violazione della legge puoi proporre <b>reclamo al Garante per la protezione dei dati
       personali</b> (<a href="https://www.garanteprivacy.it">www.garanteprivacy.it</a>, Piazza Venezia 11, 00187 Roma), o all'autorità del
@@ -352,7 +371,7 @@ che si applichi e, quando serve, ti chiediamo di nuovo il consenso.</p>
 
 <footer>
   <p>Io Conto · <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a> · <a href="https://ic.eu.com">ic.eu.com</a><br>
-  Versione 2.0, 20 novembre 2026. Sostituisce la versione del 6 febbraio 2026.</p>
+  Versione 2.1, 23 novembre 2026. Sostituisce la versione 2.0 del 20 novembre 2026.</p>
 </footer>
 </main>
 </body>
