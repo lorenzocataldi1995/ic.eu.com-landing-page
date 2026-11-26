@@ -1,10 +1,13 @@
 <!doctype html>
 <!--
-  Privacy e cookie policy di Io Conto, versione 2.1 del 23 novembre 2026 (sostituisce la 2.0 del 20 novembre 2026).
-  Descrive quello che il servizio fa a questa data, verificato sul codice del server (stack/ioconto-app/server, 1.9.2)
-  e sul server di produzione (ops/tools/privacy-facts.sh, 23/11/2026). Novità della 2.1: cancellazione di profilo e voti
-  dall'app e registro delle cancellazioni; origine reale del codice dell'app; chi vede i singoli voti; tutte le posizioni
-  conservate a circa 1 km; Expo tra i fornitori; codice per l'assistenza (docs/app-store-esiti-backend.md, B2.3).
+  Privacy e cookie policy di Io Conto, versione 2.2 del 26 novembre 2026 (sostituisce la 2.1 del 23 novembre 2026).
+  Descrive quello che il servizio fa a questa data, verificato sul codice del server (stack/ioconto-app/server, 1.11.0),
+  sul codice dell'app 1.5.0 (stack/ioconto-app/client) e sul server di produzione. Novità della 2.2 (richiesta #18, voci
+  B6-B7): i percorsi reali nell'app (menu della bandierina › Privacy, «Privacy e risposte ai questionari»); la pagina
+  ic.eu.com/app/cancellazione per chiedere la cancellazione anche senza l'app; la verifica del documento liberata dagli
+  operatori dopo un cambio di telefono (server/api/command/IdentityRelease.ts). Nessun nuovo trattamento.
+  2.1: cancellazione di profilo e voti dall'app e registro delle cancellazioni; origine reale del codice dell'app; chi vede
+  i singoli voti; tutte le posizioni conservate a circa 1 km; Expo tra i fornitori; codice per l'assistenza (B2.3).
   Da completare dal titolare: i suoi dati legali (sezione 1). Da tenere allineati: app-backend-interop.md, richieste 9 e 10.
 -->
 <html lang="it">
@@ -53,7 +56,7 @@
 <header class="top"><div class="in">
   <a class="home" href="https://ic.eu.com"><img src="../icon.svg" alt="">Io Conto</a>
   <h1>Privacy e cookie policy</h1>
-  <p>App Io Conto e sito ic.eu.com · versione 2.1 · in vigore dal 23 novembre 2026</p>
+  <p>App Io Conto e sito ic.eu.com · versione 2.2 · in vigore dal 26 novembre 2026</p>
 </div></header>
 
 <main>
@@ -68,7 +71,8 @@
     <li><b>La foto del documento</b>, quando fai la verifica dell'identità per un questionario, è letta in pochi secondi e cancellata: non la conserva nessuno.</li>
     <li><b>Server in Germania</b>. Non vendiamo dati e nell'app non c'è pubblicità né profilazione.</li>
     <li><b>Sul sito ic.eu.com</b> usiamo strumenti di misura e pubblicità di Google e Meta solo se li accetti.</li>
-    <li>Puoi <b>cancellare profilo e voti dall'app</b>, in Impostazioni › Privacy (nelle versioni dell'app che lo prevedono), e chiedere in ogni momento di vedere, correggere o cancellare i tuoi dati: <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</li>
+    <li>Puoi <b>cancellare profilo e voti dall'app</b>, nel menu dell'app (la bandierina in alto a destra) › Privacy (dalla versione 1.5.0), anche dopo averla disinstallata con la pagina
+    <a href="cancellazione">Cancellare i tuoi dati</a>, e chiedere in ogni momento di vedere, correggere o cancellare i tuoi dati: <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</li>
   </ul>
 </section>
 
@@ -172,7 +176,7 @@ facoltativi e, se non li dai, l'app funziona lo stesso (senza posizione, per ese
       autorizzate di Io Conto, tenute alla riservatezza, quando serve a gestire il servizio o a rispondere alle tue richieste (per esempio
       se chiedi di vedere o cancellare i tuoi dati). I voti non sono collegati alle risposte dei questionari dei Comuni.</li>
   <li><b>Si può cambiare?</b> Un voto non si modifica: è la regola che rende i risultati confrontabili. Puoi però <b>revocare il consenso</b>
-      cancellando profilo e voti: dall'app, in Impostazioni › Privacy › «Cancella profilo e voti» (nelle versioni dell'app che lo prevedono),
+      cancellando profilo e voti: dall'app, nel menu dell'app (la bandierina in alto a destra) › Privacy › «Cancella profilo e voti» (dalla versione 1.5.0),
       oppure scrivendoci (<a href="#diritti">sezione 15</a>). I voti sono cancellati subito e i totali si aggiornano.</li>
   <li><b>Che valore ha.</b> I risultati raccolgono le opinioni di chi usa l'app: non sono un sondaggio statistico rappresentativo, né un
       referendum, una petizione o una consultazione ufficiale (<a href="#responsabilita">sezione 16</a>).</li>
@@ -211,7 +215,8 @@ o con questionari brevi su un solo tema (per esempio un evento, la mensa, un can
       Se interrompi un questionario, le risposte date fin lì sono conservate per farti riprendere e cancellate quando il questionario chiude;</li>
   <li>il Comune riceve <b>solo risultati complessivi</b>, mai le risposte di una persona; i gruppi con meno di 10 risposte non sono mostrati.
       Il personale del Comune li consulta con un account personale protetto da password e da un codice generato sul proprio telefono;</li>
-  <li>puoi cancellare le tue risposte dall'app: nella sezione dei questionari, «Privacy e risposte» › «Cancella le mie risposte».</li>
+  <li>puoi cancellare le tue risposte dall'app: nel menu dell'app (la bandierina in alto a destra) › Privacy › «Privacy e risposte ai questionari» › «Cancella le mie risposte»,
+      oppure da «Privacy e risposte» dentro il questionario.</li>
 </ul>
 
 <h2 id="verifica">8. La verifica dell'identità</h2>
@@ -233,7 +238,12 @@ la risposta è registrata come non verificata.</p>
       con la posizione e un codice ricavato con chiave segreta da una parte del codice fiscale, che serve solo a impedire che la stessa persona
       verifichi più telefoni e non permette di risalire al codice. Ogni risposta a un questionario registra solo se chi l'ha data era verificato.</li>
   <li>Per limitare gli abusi contiamo i tentativi di ogni installazione dell'app: al massimo 5 foto in un'ora; il conteggio è cancellato dopo un'ora.</li>
-  <li>La verifica dura <b>12 mesi</b>, poi è cancellata; puoi cancellarla prima dall'app («Privacy e risposte» › «Cancella la verifica»).</li>
+  <li>La verifica dura <b>12 mesi</b>, poi è cancellata; puoi cancellarla prima dall'app: nel menu dell'app (la bandierina in alto a destra) › Privacy › «Privacy e risposte ai questionari»
+      › «Cancella la verifica» (la stessa voce è in «Privacy e risposte» dentro il questionario).</li>
+  <li><b>Se cambi o perdi il telefono</b>, la verifica resta sul vecchio e il documento risulta «già usato» sul nuovo. Cancellala dal
+      vecchio telefono, se lo hai ancora; altrimenti scrivici: dopo averti identificato (di persona con il documento, oppure con una PEC
+      con la copia del documento) la cancelliamo usando il tuo codice fiscale, che non conserviamo, e la copia del documento la cancelliamo
+      appena verificata la tua identità. Poi puoi verificare il nuovo telefono.</li>
   <li>È un controllo automatico che non ha effetti giuridici: se non riesce puoi rispondere comunque, e puoi chiederci di riesaminarlo
       scrivendo a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</li>
   <li>Per le verifiche fatte per il questionario di un Comune il titolare è quel Comune; Io Conto la gestisce per suo conto. I dettagli sono
@@ -308,7 +318,8 @@ scrivendo a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</p>
 </table></div>
 <p>Disinstallare l'app non cancella i dati sul server, e reinstallandola il telefono può ritrovare lo stesso codice (su iPhone resta nel
 portachiavi, su Android è ricavato dal telefono). Per cancellare i dati sul server usa «Cancella profilo e voti» nell'app prima di
-disinstallarla, oppure scrivici (<a href="#diritti">sezione 15</a>). Dopo una cancellazione dall'app, l'app usa un codice nuovo.</p>
+disinstallarla, oppure segui la pagina <a href="cancellazione">Cancellare i tuoi dati</a> (<a href="#diritti">sezione 15</a>). Dopo una
+cancellazione dall'app, l'app usa un codice nuovo.</p>
 
 <h2 id="sicurezza">13. Sicurezza</h2>
 <p>Proteggiamo i dati con misure tecniche e organizzative adeguate al rischio (art. 32 GDPR), tra cui: collegamenti cifrati (HTTPS) per il sito e per le
@@ -330,12 +341,14 @@ scriverci a <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>.</p>
 la <b>portabilità</b> dei dati che ci hai dato, di <b>opporti</b> ai trattamenti basati sul legittimo interesse e di <b>revocare il consenso</b>
 in ogni momento, senza che ciò tocchi quanto fatto prima della revoca (artt. 7 e 15-22 GDPR).</p>
 <ul>
-  <li><b>Dall'app:</b> in Impostazioni › Privacy › «Cancella profilo e voti» (nelle versioni dell'app che lo prevedono) cancelli profilo e
-      voti; nella sezione dei questionari, «Privacy e risposte» › «Cancella le mie risposte» (risposte, questionari aperti e verifica) e
-      «Cancella la verifica»; i permessi di posizione e ID dispositivo dalle impostazioni del telefono.</li>
+  <li><b>Dall'app</b> (dalla versione 1.5.0): nel menu dell'app (la bandierina in alto a destra) › Privacy › «Cancella profilo e voti» cancelli profilo e voti, e prima anche le risposte
+      ai questionari e la verifica; nel menu dell'app (la bandierina in alto a destra) › Privacy › «Privacy e risposte ai questionari» › «Cancella le mie risposte» (risposte, questionari
+      aperti e verifica) o «Cancella la verifica»; i permessi di posizione e ID dispositivo dalle impostazioni del telefono.</li>
+  <li><b>Senza l'app</b>, anche dopo averla disinstallata: la pagina <a href="cancellazione">Cancellare i tuoi dati</a> spiega come
+      chiederlo via email, cosa viene cancellato, cosa resta e per quanto.</li>
   <li><b>Per tutto il resto</b> (per esempio vedere i tuoi dati, o cancellarli da una versione dell'app che non lo prevede): scrivi a
       <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a>. Poiché non conosciamo il tuo nome, i tuoi dati si trovano solo tramite il codice
-      dell'app: indica nel messaggio il <b>codice per l'assistenza</b> che trovi in Impostazioni › Privacy (nelle versioni meno recenti, il
+      dell'app: indica nel messaggio il <b>codice per l'assistenza</b> che trovi nel menu dell'app (la bandierina in alto a destra) › Privacy (nelle versioni meno recenti, il
       codice dell'app, se l'app te lo mostra). Il codice per l'assistenza non permette a nessuno di vedere o cancellare i tuoi dati: serve
       solo a noi per trovarli. Se non lo trovi, scrivici comunque e ti diremo come procedere. Senza codice potremmo non riuscire a trovare i
       tuoi dati (art. 11 GDPR).</li>
@@ -371,7 +384,7 @@ che si applichi e, quando serve, ti chiediamo di nuovo il consenso.</p>
 
 <footer>
   <p>Io Conto · <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a> · <a href="https://ic.eu.com">ic.eu.com</a><br>
-  Versione 2.1, 23 novembre 2026. Sostituisce la versione 2.0 del 20 novembre 2026.</p>
+  Versione 2.2, 26 novembre 2026. Sostituisce la versione 2.1 del 23 novembre 2026.</p>
 </footer>
 </main>
 </body>

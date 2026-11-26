@@ -1,0 +1,146 @@
+<!doctype html>
+<!--
+ Pagina per chiedere la cancellazione dei dati di Io Conto, anche senza l'app (Google Play, sezione Sicurezza dei dati).
+ 26 novembre 2026. Descrive quello che il server fa a questa data (stack/ioconto-app/server 1.11.0; contratto
+ docs/account-erasure.md; procedure degli operatori in server/ops/README.md «Privacy requests»). Richiesta #18 del
+ registro app-backend, voce B6. Tenere allineata con l'informativa (app/privacy-policy.html, sezioni 12 e 15).
+-->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cancellare i tuoi dati · Io Conto</title>
+<meta name="description" content="Come cancellare i dati dell'app Io Conto: dall'app, oppure con una richiesta via email anche dopo averla disinstallata. Cosa viene cancellato, cosa resta e per quanto.">
+<link rel="icon" href="../icon.svg" sizes="any" type="image/svg+xml">
+<style>
+  :root { --brand: #3741e1; --ink: #15171b; --text: #2c2e34; --muted: #6d7077; --line: #e2e3e6; --soft: #f5f6fb; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #ffffff; color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  a { color: var(--brand); }
+  header.top { background: var(--brand); color: #fff; padding: 40px 20px 32px; }
+  header.top .in, main { max-width: 820px; margin: 0 auto; }
+  header.top a.home { color: #fff; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; }
+  header.top a.home img { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 0 0 1px rgba(255,255,255,.5); }
+  header.top h1 { font-size: 2.1rem; line-height: 1.15; margin: 22px 0 8px; letter-spacing: -0.02em; }
+  header.top p { margin: 0; opacity: .9; }
+  main { padding: 8px 20px 64px; }
+  h2 { color: var(--ink); font-size: 1.45rem; line-height: 1.25; margin: 44px 0 10px; padding-top: 8px; letter-spacing: -0.01em; }
+  h3 { color: var(--ink); font-size: 1.1rem; margin: 26px 0 6px; }
+  p, li { max-width: 72ch; }
+  ul, ol { padding-left: 1.3em; }
+  li + li { margin-top: 4px; }
+  .summary { background: var(--soft); border-radius: 16px; padding: 18px 22px; margin-top: 28px; }
+  .summary h2 { margin-top: 4px; }
+  .summary li { margin-top: 8px; }
+  nav.toc { border: 1px solid var(--line); border-radius: 16px; padding: 14px 22px; margin-top: 24px; }
+  nav.toc ol { margin: 6px 0; columns: 2; column-gap: 32px; }
+  nav.toc li { break-inside: avoid; }
+  .table { overflow-x: auto; margin: 12px 0; border: 1px solid var(--line); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .92rem; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { background: var(--soft); color: var(--ink); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+  tr:last-child td { border-bottom: 0; }
+  .note { border-left: 4px solid var(--brand); background: var(--soft); padding: 12px 16px; border-radius: 0 12px 12px 0; margin: 16px 0; }
+  footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 16px; color: var(--muted); font-size: .9rem; }
+  @media (max-width: 600px) { header.top h1 { font-size: 1.7rem; } nav.toc ol { columns: 1; } }
+  @media print { header.top { background: none; color: var(--ink); padding: 0; } header.top a.home { color: var(--ink); } nav.toc { display: none; } a { color: inherit; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="home" href="https://ic.eu.com"><img src="../icon.svg" alt="">Io Conto</a>
+  <h1>Cancellare i tuoi dati</h1>
+  <p>App Io Conto per Android (Google Play, <code>com.ioconto</code>) e iPhone · pagina aggiornata il 26 novembre 2026</p>
+</div></header>
+
+<main>
+<section class="summary">
+  <h2>In breve</h2>
+  <ul>
+    <li><b>Dall'app</b>, in pochi secondi: tocca la bandierina in alto a destra, poi <b>Privacy</b> › <b>«Cancella profilo e voti»</b>.</li>
+    <li><b>Senza l'app</b>, anche dopo averla disinstallata: scrivi a <a href="mailto:privacy@ic.eu.com?subject=Cancellazione%20dati%20Io%20Conto">privacy@ic.eu.com</a>. Rispondiamo entro un mese.</li>
+    <li>Non ti chiediamo nome, email o telefono per usare l'app: i tuoi dati si trovano solo con il <b>codice per l'assistenza</b> che l'app ti mostra. Più sotto trovi cosa fare se non lo hai.</li>
+  </ul>
+</section>
+
+<h2 id="app">1. Dall'app</h2>
+<p>Nelle versioni dell'app dalla 1.5.0:</p>
+<ol>
+  <li>tocca la <b>bandierina</b> in alto a destra per aprire il menu e scegli <b>Privacy</b>;</li>
+  <li>tocca <b>«Cancella profilo e voti»</b> e conferma con <b>«Cancella»</b>.</li>
+</ol>
+<p>Se usi i questionari dei Comuni, l'app cancella prima le tue risposte e la verifica del documento, poi profilo e voti. Se la seconda
+parte non riesce (per esempio senza rete), il pulsante diventa <b>«Completa cancellazione»</b>: toccalo di nuovo quando sei in linea.
+Dopo la cancellazione l'app riparte dalle schermate iniziali con un codice nuovo, che non è collegato a quello cancellato.</p>
+<p>Solo le risposte ai questionari o solo la verifica del documento: menu › <b>Privacy</b> › <b>«Privacy e risposte ai questionari»</b>,
+poi <b>«Cancella le mie risposte»</b> (risposte, questionari aperti e verifica) oppure <b>«Cancella la verifica»</b>. Le stesse voci si
+trovano in <b>«Privacy e risposte»</b> dentro ogni questionario.</p>
+
+<h2 id="email">2. Senza l'app, con una richiesta via email</h2>
+<p>Scrivi a <a href="mailto:privacy@ic.eu.com?subject=Cancellazione%20dati%20Io%20Conto">privacy@ic.eu.com</a> con oggetto
+«Cancellazione dati Io Conto». Puoi farlo anche se hai già disinstallato l'app, o se hai una versione che non ha il pulsante.</p>
+<ul>
+  <li><b>Con il codice per l'assistenza.</b> Lo trovi nell'app, menu › <b>Privacy</b> (si può copiare). Indicalo nel messaggio: ci
+    basta per trovare e cancellare profilo e voti. Il codice serve solo a noi per trovare i dati: non permette a nessuno di vederli o
+    cancellarli. Nelle versioni meno recenti puoi indicare il codice dell'app, se l'app te lo mostra.</li>
+  <li><b>Se hai disinstallato l'app.</b> Disinstallare non cancella i dati sul server. Reinstallando l'app <b>sullo stesso telefono</b>,
+    di solito ritrovi lo stesso codice (su iPhone resta nel portachiavi del telefono, su Android è ricavato dal telefono): a quel punto
+    puoi cancellare dall'app o leggere il codice per l'assistenza e inviarcelo.</li>
+  <li><b>Se il telefono non ce l'hai più</b> (perso, cambiato, ripristinato). Non conosciamo il tuo nome: senza il codice non possiamo
+    trovare il tuo profilo, i tuoi voti né le tue risposte ai questionari, e quindi non possiamo cancellarli né dirti quali sono
+    (art. 11 del GDPR). Restano dati senza nome, che nessuno può ricondurre a te. Scrivici comunque: ti spieghiamo cosa possiamo fare.</li>
+  <li><b>La verifica del documento</b> si può cancellare anche senza il telefono, perché è legata alla persona: ti chiediamo di
+    identificarti (di persona con il documento, oppure con una PEC con la copia del documento) e la cancelliamo con il tuo codice fiscale,
+    che non conserviamo; la copia del documento la cancelliamo appena verificata la tua identità. Serve anche se hai cambiato
+    telefono e la verifica risulta «già usata» sul vecchio.</li>
+</ul>
+<p>Non ti chiederemo mai password o codici di accesso, e non ti contatteremo per primi chiedendo dati.</p>
+
+<h2 id="cosa">3. Cosa viene cancellato</h2>
+<div class="table"><table>
+  <thead><tr><th>Dati</th><th>Come</th><th>Quando</th></tr></thead>
+  <tbody>
+    <tr><td><b>Profilo</b>: codice dell'app, identificativo del dispositivo (se l'avevi consentito), posizione arrotondata a circa 1 km, Comune, provincia, regione</td>
+        <td>«Cancella profilo e voti», o la tua richiesta</td><td>subito dall'app; per email entro i tempi del punto 5</td></tr>
+    <tr><td><b>Voti sui decreti</b> e versione del consenso confermato</td>
+        <td>insieme al profilo</td><td>subito; i totali dei decreti si aggiornano senza i tuoi voti</td></tr>
+    <tr><td><b>Risposte ai questionari dei Comuni</b>, questionari aperti e non inviati</td>
+        <td>«Cancella le mie risposte» (anche dentro «Cancella profilo e voti»)</td><td>subito</td></tr>
+    <tr><td><b>Verifica del documento</b> e conteggio dei tentativi</td>
+        <td>«Cancella la verifica», «Cancella le mie risposte», o la tua richiesta con il codice fiscale</td><td>subito</td></tr>
+  </tbody>
+</table></div>
+<p>La foto del documento non è mai conservata, quindi non c'è nulla da cancellare.</p>
+
+<h2 id="resta">4. Cosa resta, e per quanto</h2>
+<div class="table"><table>
+  <thead><tr><th>Cosa</th><th>Perché</th><th>Per quanto</th></tr></thead>
+  <tbody>
+    <tr><td>Registro delle cancellazioni: un'impronta del codice ottenuta con una chiave segreta (non il codice), la data e se la cancellazione è partita dall'app o da una richiesta</td>
+        <td>dimostrare di aver cancellato; non ricreare i dati se ripristinassimo una copia di sicurezza</td><td>24 mesi</td></tr>
+    <tr><td>Copie di sicurezza del database, cifrate</td><td>recuperare il servizio dopo un guasto</td>
+        <td>14 giorni: la cancellazione vi si riflette entro questo tempo; se ne ripristinassimo una, ripeteremmo le cancellazioni fatte dopo</td></tr>
+    <tr><td>Registro delle richieste al server (indirizzo IP, data, indirizzo richiesto, versione dell'app; mai il contenuto)</td>
+        <td>sicurezza e diagnosi dei guasti</td><td>15 giorni</td></tr>
+    <tr><td>La tua email e la nostra risposta</td><td>dimostrare come abbiamo gestito la richiesta</td><td>fino a 24 mesi</td></tr>
+    <tr><td>Totali dei voti e risultati complessivi dei questionari già consegnati ai Comuni</td><td>non contengono i singoli voti o le singole risposte</td><td>restano</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="tempi">5. Tempi e costi</h2>
+<p>Dall'app la cancellazione è immediata. Alle richieste via email rispondiamo <b>entro un mese</b>; nei casi complessi il termine può
+essere prorogato di due mesi, e te lo diciamo entro il primo mese (art. 12 del GDPR). È gratuito.</p>
+<p>Per i questionari dei Comuni il titolare è il Comune, che Io Conto assiste: puoi scrivere a noi o al Comune.</p>
+
+<h2 id="altro">6. Altre informazioni</h2>
+<p>Tutto sul trattamento dei dati, i tuoi diritti e come proporre reclamo al Garante: <a href="privacy-policy">informativa privacy di Io Conto</a>.
+Questionari dei Comuni: <a href="ascolto-civico/privacy">informativa dei questionari</a>.</p>
+
+<footer>
+  <p>Io Conto · <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a> · <a href="https://ic.eu.com">ic.eu.com</a></p>
+  <p>Pagina aggiornata il 26 novembre 2026.</p>
+</footer>
+</main>
+</body>
+</html>
