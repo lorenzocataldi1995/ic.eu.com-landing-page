@@ -1,6 +1,10 @@
 <!doctype html>
 <!--
-  Privacy e cookie policy di Io Conto, versione 2.3 del 26 novembre 2026 (sostituisce la 2.2 dello stesso giorno).
+  Privacy e cookie policy di Io Conto, versione 2.4 del 26 novembre 2026 (sostituisce la 2.3 dello stesso giorno).
+  2.4 (richieste #20 e #22 del registro app-backend): la pagina principale del sito non carica più il carattere da un
+  servizio esterno (sezione 9); le versioni dell'app precedenti alla 1.5.0 caricano il carattere dei decreti da Google
+  Fonts, la 1.5.0 no (sezione 10); i risultati dei pareri non sono un sondaggio e possono essere sospesi prima delle
+  votazioni (sezioni 5 e 16). Nessun nuovo trattamento.
   2.3: i dati legali del titolare nella sezione 1 (art. 13, par. 1, lett. a GDPR). Nessun nuovo trattamento.
   Descrive quello che il servizio fa a questa data, verificato sul codice del server (stack/ioconto-app/server, 1.11.0),
   sul codice dell'app 1.5.0 (stack/ioconto-app/client) e sul server di produzione. Novità della 2.2 (richiesta #18, voci
@@ -58,7 +62,7 @@
 <header class="top"><div class="in">
   <a class="home" href="https://ic.eu.com"><img src="../icon.svg" alt="">Io Conto</a>
   <h1>Privacy e cookie policy</h1>
-  <p>App Io Conto e sito ic.eu.com · versione 2.3 · in vigore dal 26 novembre 2026</p>
+  <p>App Io Conto e sito ic.eu.com · versione 2.4 · in vigore dal 26 novembre 2026</p>
 </div></header>
 
 <main>
@@ -180,8 +184,11 @@ facoltativi e, se non li dai, l'app funziona lo stesso (senza posizione, per ese
   <li><b>Si può cambiare?</b> Un voto non si modifica: è la regola che rende i risultati confrontabili. Puoi però <b>revocare il consenso</b>
       cancellando profilo e voti: dall'app, nel menu dell'app (la bandierina in alto a destra) › Privacy › «Cancella profilo e voti» (dalla versione 1.5.0),
       oppure scrivendoci (<a href="#diritti">sezione 15</a>). I voti sono cancellati subito e i totali si aggiornano.</li>
-  <li><b>Che valore ha.</b> I risultati raccolgono le opinioni di chi usa l'app: non sono un sondaggio statistico rappresentativo, né un
-      referendum, una petizione o una consultazione ufficiale (<a href="#responsabilita">sezione 16</a>).</li>
+  <li><b>Che valore ha.</b> I risultati raccolgono le opinioni di chi sceglie di usare l'app e di esprimersi: non sono un sondaggio, non
+      hanno valore scientifico o statistico e non rappresentano la popolazione; non sono un referendum, una petizione o una consultazione
+      ufficiale (<a href="#responsabilita">sezione 16</a>). Nei quindici giorni prima di una votazione, e fino alla chiusura dei seggi,
+      i risultati possono non essere mostrati, per rispetto delle regole sulla diffusione di sondaggi e opinioni in periodo elettorale
+      (legge 28/2000, art. 8): puoi comunque esprimere il tuo parere.</li>
 </ul>
 
 <h2 id="posizione">6. La posizione</h2>
@@ -254,8 +261,8 @@ la risposta è registrata come non verificata.</p>
 
 <h2 id="sito">9. Il sito ic.eu.com e i cookie</h2>
 <p>Il sito è ospitato da GitHub Pages (GitHub, Inc.) e raggiunto attraverso la rete di Cloudflare, Inc., che per farlo funzionare e
-proteggerlo trattano l'indirizzo IP e i dati tecnici della connessione. Il carattere tipografico della pagina principale del sito è
-caricato da un servizio esterno (fonts.cdnfonts.com), che riceve l'indirizzo IP del tuo browser; questa pagina non lo usa.</p>
+proteggerlo trattano l'indirizzo IP e i dati tecnici della connessione. Il sito non carica caratteri
+tipografici, immagini o altri contenuti da servizi esterni: prima del tuo consenso non parte nessuna richiesta verso terzi.</p>
 <p><b>L'app Io Conto non usa cookie né strumenti di tracciamento pubblicitario.</b> Il sito usa:</p>
 <div class="table"><table>
   <thead><tr><th>Strumento</th><th>Di chi</th><th>A cosa serve</th><th>Quando</th><th>Durata</th></tr></thead>
@@ -290,6 +297,9 @@ proprio compito e con un contratto che lo obbliga a proteggerli (responsabili de
 <p>Google e Meta ricevono dati dal sito solo con il tuo consenso (<a href="#sito">sezione 9</a>). OpenAI, che usiamo per preparare le
 sintesi dei decreti, riceve solo i testi pubblici dei provvedimenti, nessun dato degli utenti. Gli store (Google Play, App Store) trattano i
 dati del tuo account come titolari autonomi, secondo le loro regole.</p>
+<p><b>Versioni dell'app precedenti alla 1.5.0.</b> Quando apri un decreto, queste versioni scaricano il carattere tipografico del testo da
+Google Fonts (Google Ireland Limited e Google LLC): Google riceve l'indirizzo IP del telefono e i dati tecnici della richiesta, mai voti né
+dati del profilo. Dalla versione 1.5.0 il carattere è dentro l'app e questa richiesta non parte più: per evitarla basta aggiornare l'app.</p>
 <p>Comunichiamo dati alle autorità solo quando la legge lo impone. Se Io Conto fosse ceduto, i dati passerebbero a chi prosegue il
 servizio, con le stesse garanzie e dopo averti avvisato.</p>
 
@@ -364,8 +374,8 @@ in ogni momento, senza che ciò tocchi quanto fatto prima della revoca (artt. 7 
 <ul>
   <li><b>Informazione, non consulenza.</b> I contenuti dell'app hanno scopo informativo. Le sintesi possono semplificare o contenere errori:
       per ogni uso che conti (studio, lavoro, decisioni) consulta il testo ufficiale e, se serve, un professionista.</li>
-  <li><b>Il valore dei voti.</b> I voti e le statistiche dell'app raccolgono le opinioni dei suoi utenti; non sono un campione rappresentativo
-      della popolazione e non hanno valore ufficiale, legale o elettorale.</li>
+  <li><b>Il valore dei voti.</b> I voti e le statistiche dell'app raccolgono le opinioni dei suoi utenti: non sono un sondaggio, non hanno
+      valore scientifico, non sono un campione rappresentativo della popolazione e non hanno valore ufficiale, legale o elettorale.</li>
   <li><b>I questionari dei Comuni.</b> Domande, periodo e uso dei risultati sono decisi dal Comune, che ne risponde.</li>
   <li><b>Uso corretto.</b> Non è consentito alterare i risultati (per esempio con più installazioni per votare più volte, con richieste
       automatiche o con copie modificate dell'app), né usare il servizio contro la legge o i diritti di altri. In questi casi possiamo
@@ -386,7 +396,7 @@ che si applichi e, quando serve, ti chiediamo di nuovo il consenso.</p>
 
 <footer>
   <p>Io Conto · <a href="mailto:privacy@ic.eu.com">privacy@ic.eu.com</a> · <a href="https://ic.eu.com">ic.eu.com</a><br>
-  Versione 2.3, 26 novembre 2026. Sostituisce la versione 2.2 dello stesso giorno.<br>
+  Versione 2.4, 26 novembre 2026. Sostituisce la versione 2.3 dello stesso giorno.<br>
   Lorenzo Cataldi, impresa individuale, Via per la Stazione di Aquino 72, 03030 Castrocielo (FR), partita IVA 03307760607.</p>
 </footer>
 </main>

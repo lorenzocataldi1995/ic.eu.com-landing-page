@@ -41,8 +41,18 @@
       content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIHJ4PSI4MCIgZmlsbD0iIzQ0NDdFNiIvPjxwYXRoIGQ9Ik0xNTAgMjAwQzE1MCAxNzIuMzg2IDE3Mi4zODYgMTUwIDIwMCAxNTBDMjI3LjYxNCAxNTAgMjUwIDE3Mi4zODYgMjUwIDIwMEMyNTAgMjI3LjYxNCAyMjcuNjE0IDI1MCAyMDAgMjUwQzE3Mi4zODYgMjUwIDE1MCAyMjcuNjE0IDE1MCAyMDAiIGZpbGw9IndoaXRlIi8+PC9zdmc+"
     />
 
-    <!-- Manrope Font -->
-    <link href="https://fonts.cdnfonts.com/css/manrope" rel="stylesheet" />
+    <!-- Manrope (SIL Open Font License: fonts/Manrope-OFL.txt), servito da questo sito: nessuna richiesta a terzi
+         prima del consenso. Un solo file a peso variabile (200-800), caratteri latini. -->
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      @font-face {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 200 800;
+        font-display: swap;
+        src: url("/fonts/manrope-latin.woff2") format("woff2");
+      }
+    </style>
 
     <!-- Strumenti di misura e pubblicità (Meta Pixel, Google Analytics 4, Google Ads): caricati SOLO dopo il consenso
          dato nel banner in fondo alla pagina (art. 122 Codice privacy, linee guida del Garante sui cookie, 10 giugno 2021).
@@ -281,7 +291,7 @@
 
       .app-slogan {
         font-size: 1.25rem;
-        font-weight: 100;
+        font-weight: 200;
         margin: 0 0 20px 0;
       }
 
